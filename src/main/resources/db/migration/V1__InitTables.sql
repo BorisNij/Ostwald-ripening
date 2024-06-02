@@ -1,31 +1,31 @@
-drop table IF EXISTS students, groups, courses, student_course CASCADE;
+DROP TABLE IF EXISTS students, GROUPS, courses, student_course CASCADE;
 
-create table groups (
-    group_id SERIAL PRIMARY KEY,
-    group_name VARCHAR(255) NOT NULL,
+CREATE TABLE GROUPS (
+    group_id serial PRIMARY KEY,
+    group_name varchar(255) NOT NULL,
     CONSTRAINT unique_group_name UNIQUE (group_name)
 );
 
-create table students (
-    student_id SERIAL PRIMARY KEY,
-    group_id INT,
-    first_name VARCHAR(255) NOT NULL,
-    last_name VARCHAR(255) NOT NULL,
-    FOREIGN KEY (group_id) REFERENCES groups (group_id) ON delete SET NULL
+CREATE TABLE students (
+    student_id serial PRIMARY KEY,
+    group_id int,
+    first_name varchar(255) NOT NULL,
+    last_name varchar(255) NOT NULL,
+    FOREIGN KEY (group_id) REFERENCES GROUPS (group_id) ON DELETE SET NULL
 );
 
-create table courses (
-    course_id SERIAL PRIMARY KEY,
-    course_name VARCHAR(255) NOT NULL,
-    course_description TEXT,
+CREATE TABLE courses (
+    course_id serial PRIMARY KEY,
+    course_name varchar(255) NOT NULL,
+    course_description text,
     CONSTRAINT unique_course_name UNIQUE (course_name)
 );
 
-create table student_course (
-    id SERIAL PRIMARY KEY,
+CREATE TABLE student_course (
+    id serial PRIMARY KEY,
     student_id int,
     course_id int,
-    foreign key (student_id) references students (student_id) ON delete CASCADE,
-    foreign key (course_id) references courses (course_id) ON delete CASCADE,
+    FOREIGN KEY (student_id) REFERENCES students (student_id) ON DELETE CASCADE,
+    FOREIGN KEY (course_id) REFERENCES courses (course_id) ON DELETE CASCADE,
     CONSTRAINT unique_student_course UNIQUE (student_id, course_id)
 );
