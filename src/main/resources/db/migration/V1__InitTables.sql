@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS students, GROUPS, courses, student_course CASCADE;
+DROP TABLE IF EXISTS students, groups, courses, student_course CASCADE;
 
-CREATE TABLE GROUPS (
+CREATE TABLE groups (
     group_id serial PRIMARY KEY,
     group_name varchar(255) NOT NULL,
     CONSTRAINT unique_group_name UNIQUE (group_name)
@@ -11,7 +11,7 @@ CREATE TABLE students (
     group_id int,
     first_name varchar(255) NOT NULL,
     last_name varchar(255) NOT NULL,
-    FOREIGN KEY (group_id) REFERENCES GROUPS (group_id) ON DELETE SET NULL
+    FOREIGN KEY (group_id) REFERENCES groups (group_id) ON DELETE SET NULL
 );
 
 CREATE TABLE courses (

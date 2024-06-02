@@ -1,70 +1,69 @@
-insert into courses (course_name, course_description)
-    values ('Course1', 'Description1'),
+INSERT INTO courses (course_name, course_description)
+    VALUES ('Course1', 'Description1'),
     ('Course2', 'Description2'),
     ('Course to delete', 'Description');
 
-insert into GROUPS (group_name)
-    values ('BB-22'),
+INSERT INTO groups (group_name)
+    VALUES ('BB-22'),
     ('CC-33'),
     ('Group to Delete');
 
-insert into students (group_id, first_name, last_name)
-    values ((
-            select
+INSERT INTO students (group_id, first_name, last_name)
+    VALUES ((
+            SELECT
                 group_id
-            from
-                GROUPS
-            where
+            FROM
+                groups
+            WHERE
                 group_name = 'BB-22'), 'Jane', 'Doe'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-        where
+        FROM groups
+        WHERE
             group_name = 'CC-33'), 'Student', 'ToRemove'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CC-33'), 'Student2', 'McStudent2');
 
-insert into student_course (student_id, course_id)
-    values ((
-            select
+INSERT INTO student_course (student_id, course_id)
+    VALUES ((
+            SELECT
                 student_id
-            from
+            FROM
                 students
-            where
+            WHERE
                 first_name = 'Jane'
-                and last_name = 'Doe'),
+                AND last_name = 'Doe'),
             (
-                select
+                SELECT
                     course_id
-                from
+                FROM
                     courses
-                where
+                WHERE
                     course_name = 'Course1')),
         ((
-            select
+            SELECT
                 student_id
-            from students
-            where
+            FROM students
+            WHERE
                 first_name = 'Jane'
-                and last_name = 'Doe'), (
-            select
+                AND last_name = 'Doe'), (
+            SELECT
                 course_id
-            from courses
-        where
+            FROM courses
+        WHERE
             course_name = 'Course2')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Student'
-        and last_name = 'ToRemove'), (
-    select
+        AND last_name = 'ToRemove'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Course2'));
-

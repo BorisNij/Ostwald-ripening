@@ -1,5 +1,5 @@
-insert into GROUPS (group_name)
-    values ('AB-45'),
+INSERT INTO groups (group_name)
+    VALUES ('AB-45'),
     ('PQ-77'),
     ('CD-88'),
     ('EF-12'),

@@ -2,6 +2,7 @@ package net.bnijik.schoolScheduler.service.course;
 
 import net.bnijik.schoolScheduler.dto.CourseDto;
 import net.bnijik.schoolScheduler.entity.Course;
+import net.bnijik.schoolScheduler.entity.Professor;
 import net.bnijik.schoolScheduler.mapper.CourseMapper;
 import net.bnijik.schoolScheduler.repository.CourseRepository;
 import org.junit.jupiter.api.DisplayName;
@@ -42,7 +43,7 @@ class CourseServiceImplTest {
     private static Stream<Arguments> courseProvider() {
         return Stream.of(
                 Arguments.of(
-                        new Course(2L, "Some cool course", "Coolest description", new HashSet<>()),
+                        new Course(2L, "Some cool course", "Coolest description", new HashSet<>(), new Professor()),
                         new CourseDto(2L, "Some cool course", "Coolest description")
                 ));
     }
@@ -50,7 +51,7 @@ class CourseServiceImplTest {
     private static Stream<Arguments> courseDtoProvider() {
         List<String> strings = List.of("A", "B", "C");
         List<Course> courses = IntStream.range(0, strings.size())
-                .mapToObj(i -> new Course(i, strings.get(i), strings.get(i), new HashSet<>()))
+                .mapToObj(i -> new Course(i, strings.get(i), strings.get(i), new HashSet<>(), new Professor()))
                 .collect(Collectors.toList());
         List<CourseDto> dtos = IntStream.range(0, strings.size())
                 .mapToObj(i -> new CourseDto(i, strings.get(i), strings.get(i)))

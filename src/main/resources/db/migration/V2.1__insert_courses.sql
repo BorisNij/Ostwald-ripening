@@ -1,5 +1,5 @@
-insert into courses (course_name, course_description)
-    values ('Math', 'Mathematics Course'),
+INSERT INTO courses (course_name, course_description)
+    VALUES ('Math', 'Mathematics Course'),
     ('Biology', 'Biology Course'),
     ('History', 'History Course'),
     ('Physics', 'Physics Course'),

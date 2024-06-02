@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -14,7 +15,7 @@ import java.util.Set;
 @Accessors(fluent = true)
 @Entity
 @Table(name = "courses")
-public class Course implements Comparable<Course> {
+public class Course implements Comparable<Course>, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "course_seq_generator")
     @SequenceGenerator(name = "course_seq_generator", sequenceName = "courses_course_id_seq", allocationSize = 1)
@@ -28,6 +29,13 @@ public class Course implements Comparable<Course> {
     @ManyToMany(mappedBy = "courses")
     @OrderBy("studentId")
     private Set<Student> students = new LinkedHashSet<>();
+    @OneToOne
+    @JoinTable(
+            name = "main_instructors",
+            joinColumns = @JoinColumn(name = "course_id"),
+            inverseJoinColumns = @JoinColumn(name = "professor_id")
+    )
+    private Professor mainInstructor;
 
     @Override
     public boolean equals(Object obj) {

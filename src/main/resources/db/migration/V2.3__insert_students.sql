@@ -1,943 +1,943 @@
-insert into students (group_id, first_name, last_name)
-    values ((
-            select
+INSERT INTO students (group_id, first_name, last_name)
+    VALUES ((
+            SELECT
                 group_id
-            from
-                GROUPS
-            where
+            FROM
+                groups
+            WHERE
                 group_name = 'CD-88'), 'Samantha', 'Davis'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-        where
+        FROM groups
+        WHERE
             group_name = 'XY-32'), 'Olivia', 'Martinez'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Daniel', 'Garcia'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Daniel', 'Young'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'Olivia', 'Miller'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'Olivia', 'Garcia'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'LM-99'), 'Elizabeth', 'Turner'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Jennifer', 'Turner'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Emily', 'Miller'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'James', 'Clark'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'Elizabeth', 'Jackson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'UV-55'), 'Sophia', 'White'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'UV-55'), 'Christopher', 'White'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'WX-21'), 'William', 'Miller'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'WX-21'), 'Benjamin', 'White'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'Joseph', 'Johnson'), (NULL, 'Ashley', 'White'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'WX-21'), 'Elizabeth', 'Harris'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Ashley', 'Johnson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Sophia', 'Smith'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Robert', 'Taylor'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'XY-32'), 'David', 'Lewis'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'LM-99'), 'Daniel', 'Brown'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'LM-99'), 'Samantha', 'Young'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'XY-32'), 'Ashley', 'Jackson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'John', 'Miller'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Samantha', 'Clark'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Robert', 'Jones'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Elizabeth', 'White'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'XY-32'), 'John', 'Garcia'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Daniel', 'Turner'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'XY-32'), 'Sarah', 'Adams'), (NULL, 'James', 'Davis'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'John', 'White'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Samantha', 'Hall'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'UV-55'), 'Emily', 'Martinez'), (NULL, 'Joseph', 'Anderson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'James', 'White'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'Daniel', 'Jackson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Christopher', 'Turner'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'Samantha', 'Turner'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Robert', 'Young'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'LM-99'), 'Sophia', 'Johnson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'WX-21'), 'Daniel', 'Jones'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'William', 'Jackson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Christopher', 'Hall'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'Jessica', 'Taylor'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'LM-99'), 'Christopher', 'Harris'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'Sarah', 'Clark'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'Jennifer', 'Taylor'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'Joseph', 'Wilson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Elizabeth', 'Anderson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Jessica', 'Anderson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'Christopher', 'Garcia'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'William', 'Garcia'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Elizabeth', 'Jones'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Christopher', 'Smith'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'Ashley', 'Young'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'XY-32'), 'Sophia', 'Davis'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'XY-32'), 'James', 'Anderson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Ashley', 'Anderson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Michael', 'Jackson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'XY-32'), 'Benjamin', 'Johnson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'Sophia', 'Jackson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Jennifer', 'Young'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'LM-99'), 'Emily', 'Brown'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Elizabeth', 'Martinez'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Michael', 'Turner'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'William', 'Harris'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Mary', 'Young'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'XY-32'), 'Christopher', 'Lewis'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'James', 'Jones'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Jennifer', 'Hall'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Ashley', 'Hall'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Jennifer', 'Smith'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'Olivia', 'Jackson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Elizabeth', 'Brown'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Benjamin', 'Jones'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Christopher', 'Jackson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'XY-32'), 'David', 'Young'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Jennifer', 'Miller'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'UV-55'), 'Emily', 'Jones'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'UV-55'), 'William', 'Johnson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'Elizabeth', 'Garcia'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'James', 'Johnson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Daniel', 'Anderson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'LM-99'), 'Robert', 'Turner'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'Mary', 'Adams'), (NULL, 'Sarah', 'Martinez'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'Daniel', 'Harris'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'Jessica', 'Brown'), (NULL, 'Sarah', 'Miller'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'LM-99'), 'Christopher', 'Johnson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'WX-21'), 'James', 'Harris'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Daniel', 'Hall'), (NULL, 'Ashley', 'Wilson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'John', 'Johnson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Emily', 'Smith'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'XY-32'), 'Mary', 'Smith'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Sophia', 'Martinez'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'LM-99'), 'Ashley', 'Taylor'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'UV-55'), 'Olivia', 'Turner'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Jennifer', 'Jackson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'XY-32'), 'Christopher', 'Davis'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'Robert', 'Brown'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'XY-32'), 'Benjamin', 'Taylor'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Olivia', 'Brown'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'John', 'Smith'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'Olivia', 'Jones'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'WX-21'), 'Christopher', 'Clark'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'XY-32'), 'Michael', 'Miller'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'XY-32'), 'Samantha', 'Wilson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'WX-21'), 'Sophia', 'Young'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'Joseph', 'Lewis'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'Mary', 'Garcia'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'David', 'Smith'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Robert', 'Jackson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Sarah', 'Garcia'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'XY-32'), 'John', 'Turner'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'John', 'Wilson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'XY-32'), 'Jessica', 'Davis'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Samantha', 'Johnson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'XY-32'), 'Benjamin', 'Miller'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'Ashley', 'Jones'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Michael', 'Wilson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'LM-99'), 'Benjamin', 'Clark'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'Olivia', 'White'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Joseph', 'Martinez'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Samantha', 'Martinez'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Benjamin', 'Turner'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'UV-55'), 'Emily', 'Lewis'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'WX-21'), 'Olivia', 'Hall'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'WX-21'), 'Olivia', 'Smith'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Christopher', 'Brown'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'Elizabeth', 'Taylor'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'David', 'Jones'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'WX-21'), 'James', 'Martinez'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'David', 'Taylor'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Emily', 'Johnson'), (NULL, 'Michael', 'Anderson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Emily', 'Anderson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'UV-55'), 'David', 'Wilson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'David', 'Hall'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'James', 'Miller'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Jennifer', 'Davis'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Robert', 'Smith'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'WX-21'), 'Mary', 'Brown'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Sophia', 'Taylor'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'WX-21'), 'David', 'Martinez'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'XY-32'), 'Sarah', 'White'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'XY-32'), 'Mary', 'Hall'), (NULL, 'Joseph', 'Garcia'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'Olivia', 'Anderson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Elizabeth', 'Wilson'), (NULL, 'William', 'Taylor'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'LM-99'), 'William', 'White'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'Ashley', 'Martinez'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'UV-55'), 'James', 'Taylor'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'Jennifer', 'Adams'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Elizabeth', 'Clark'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Olivia', 'Taylor'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Joseph', 'Turner'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'UV-55'), 'Ashley', 'Miller'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Jessica', 'Lewis'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'John', 'Martinez'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'WX-21'), 'Mary', 'Clark'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'James', 'Jackson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Joseph', 'Jones'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Michael', 'Clark'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Samantha', 'Jones'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Michael', 'Jones'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'Christopher', 'Martinez'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Ashley', 'Harris'), (NULL, 'Sophia', 'Lewis'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Joseph', 'Harris'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Samantha', 'Harris'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'LM-99'), 'Benjamin', 'Adams'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'David', 'Brown'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'Jessica', 'Jones'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'Benjamin', 'Martinez'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Olivia', 'Wilson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'LM-99'), 'William', 'Anderson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'PQ-77'), 'Emily', 'Wilson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'LM-99'), 'Benjamin', 'Harris'), (NULL, 'Sarah', 'Young'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Ashley', 'Brown'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'William', 'Young'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'James', 'Hall'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'Robert', 'Lewis'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'LM-99'), 'Robert', 'Martinez'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'Ashley', 'Smith'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Benjamin', 'Hall'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Sophia', 'Adams'), (NULL, 'Mary', 'Wilson'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'EF-12'), 'Jessica', 'Miller'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'XY-32'), 'Benjamin', 'Brown'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'CD-88'), 'David', 'Turner'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'JK-63'), 'Samantha', 'Brown'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'WX-21'), 'Emily', 'Clark'), ((
-        select
+        SELECT
             group_id
-        from GROUPS
-    where
+        FROM groups
+    WHERE
         group_name = 'AB-45'), 'Joseph', 'Davis');

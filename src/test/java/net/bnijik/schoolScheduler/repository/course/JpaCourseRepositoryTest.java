@@ -3,6 +3,7 @@ package net.bnijik.schoolScheduler.repository.course;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import net.bnijik.schoolScheduler.entity.Course;
+import net.bnijik.schoolScheduler.entity.Professor;
 import net.bnijik.schoolScheduler.repository.CourseRepository;
 import net.bnijik.schoolScheduler.repository.hibernate.HibernateRepositoryImpl;
 import org.junit.jupiter.api.DisplayName;
@@ -36,7 +37,7 @@ class JpaCourseRepositoryTest {
     @Test
     @DisplayName("when finding course by id should return the right course")
     void whenFindingCourseByIdShouldReturnTheRightCourse() {
-        final Course expected = new Course(2L, "Course2", "Description2", Collections.emptySet());
+        final Course expected = new Course(2L, "Course2", "Description2", Collections.emptySet(), new Professor());
         final Optional<Course> optionalCourse = courseRepository.findById(expected.courseId());
 
         assertThat(optionalCourse).hasValue(expected);
@@ -57,8 +58,8 @@ class JpaCourseRepositoryTest {
     void whenFindingAllCoursesPageShouldReturnSliceOfAllCoursesOnPage() {
         final Slice<Course> courses = courseRepository.findAll(PageRequest.of(0, 2));
 
-        assertThat(courses).containsExactly(new Course(1L, "Course1", "Description1", Collections.emptySet()),
-                                            new Course(2L, "Course2", "Description2", Collections.emptySet()));
+        assertThat(courses).containsExactly(new Course(1L, "Course1", "Description1", Collections.emptySet(), new Professor()),
+                                            new Course(2L, "Course2", "Description2", Collections.emptySet(), new Professor()));
 
     }
 
@@ -76,7 +77,11 @@ class JpaCourseRepositoryTest {
     @Test
     @DisplayName("when updating existing course should update course")
     void whenUpdatingExistingCourseShouldUpdateCourse() {
-        final Course entity = new Course(3L, "Modified course name", "Modified description", Collections.emptySet());
+        final Professor mainInstructor = new Professor().firstName("John").lastName("Johnson");
+        entityManager.persist(mainInstructor);
+
+        final Course entity = new Course(3L, "Modified course name", "Modified description", Collections.emptySet(),
+                                         mainInstructor);
         final Course updatedEntity = courseRepository.update(entity);
         assertThat(updatedEntity).isEqualTo(entity);
         assertThat(updatedEntity).isSameAs(entity);
@@ -93,8 +98,8 @@ class JpaCourseRepositoryTest {
     void whenFindingCoursesForAStudentShouldReturnTheCorrectCourses() {
         Slice<Course> enrolledCourses = courseRepository.findAllByStudentsStudentId(1, PageRequest.of(0, 5));
 
-        assertThat(enrolledCourses).containsExactly(new Course(1L, "Course1", "Description1", Collections.emptySet()),
-                                                    new Course(2L, "Course2", "Description2", Collections.emptySet()));
+        assertThat(enrolledCourses).containsExactly(new Course(1L, "Course1", "Description1", Collections.emptySet(), new Professor()),
+                                                    new Course(2L, "Course2", "Description2", Collections.emptySet(), new Professor()));
     }
 
 

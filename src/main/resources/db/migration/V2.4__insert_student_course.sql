@@ -1,4840 +1,4840 @@
-insert into student_course (student_id, course_id)
-    values ((
-            select
+INSERT INTO student_course (student_id, course_id)
+    VALUES ((
+            SELECT
                 student_id
-            from
+            FROM
                 students
-            where
+            WHERE
                 first_name = 'Elizabeth'
-                and last_name = 'Turner'),
+                AND last_name = 'Turner'),
             (
-                select
+                SELECT
                     course_id
-                from
+                FROM
                     courses
-                where
+                WHERE
                     course_name = 'Biology')),
         ((
-            select
+            SELECT
                 student_id
-            from students
-            where
+            FROM students
+            WHERE
                 first_name = 'Ashley'
-                and last_name = 'Wilson'), (
-            select
+                AND last_name = 'Wilson'), (
+            SELECT
                 course_id
-            from courses
-        where
+            FROM courses
+        WHERE
             course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Taylor'), (
-    select
+        AND last_name = 'Taylor'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Joseph'
-        and last_name = 'Johnson'), (
-    select
+        AND last_name = 'Johnson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Harris'), (
-    select
+        AND last_name = 'Harris'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'John'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Daniel'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Smith'), (
-    select
+        AND last_name = 'Smith'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Michael'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sophia'
-        and last_name = 'Taylor'), (
-    select
+        AND last_name = 'Taylor'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Michael'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Garcia'), (
-    select
+        AND last_name = 'Garcia'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'Taylor'), (
-    select
+        AND last_name = 'Taylor'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Anderson'), (
-    select
+        AND last_name = 'Anderson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Johnson'), (
-    select
+        AND last_name = 'Johnson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sarah'
-        and last_name = 'Adams'), (
-    select
+        AND last_name = 'Adams'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Johnson'), (
-    select
+        AND last_name = 'Johnson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Davis'), (
-    select
+        AND last_name = 'Davis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Johnson'), (
-    select
+        AND last_name = 'Johnson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Joseph'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sophia'
-        and last_name = 'Young'), (
-    select
+        AND last_name = 'Young'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jessica'
-        and last_name = 'Davis'), (
-    select
+        AND last_name = 'Davis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'John'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'William'
-        and last_name = 'Taylor'), (
-    select
+        AND last_name = 'Taylor'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jennifer'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Smith'), (
-    select
+        AND last_name = 'Smith'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Harris'), (
-    select
+        AND last_name = 'Harris'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Johnson'), (
-    select
+        AND last_name = 'Johnson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Smith'), (
-    select
+        AND last_name = 'Smith'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sophia'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Taylor'), (
-    select
+        AND last_name = 'Taylor'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Joseph'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Michael'
-        and last_name = 'Anderson'), (
-    select
+        AND last_name = 'Anderson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jessica'
-        and last_name = 'Davis'), (
-    select
+        AND last_name = 'Davis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'John'
-        and last_name = 'Smith'), (
-    select
+        AND last_name = 'Smith'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sarah'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Joseph'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jennifer'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Smith'), (
-    select
+        AND last_name = 'Smith'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'John'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Joseph'
-        and last_name = 'Harris'), (
-    select
+        AND last_name = 'Harris'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sarah'
-        and last_name = 'Clark'), (
-    select
+        AND last_name = 'Clark'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sophia'
-        and last_name = 'Adams'), (
-    select
+        AND last_name = 'Adams'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Joseph'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Michael'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Michael'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'William'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jennifer'
-        and last_name = 'Taylor'), (
-    select
+        AND last_name = 'Taylor'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'James'
-        and last_name = 'Johnson'), (
-    select
+        AND last_name = 'Johnson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Garcia'), (
-    select
+        AND last_name = 'Garcia'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'William'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sophia'
-        and last_name = 'Johnson'), (
-    select
+        AND last_name = 'Johnson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Daniel'
-        and last_name = 'Anderson'), (
-    select
+        AND last_name = 'Anderson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Robert'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sarah'
-        and last_name = 'Adams'), (
-    select
+        AND last_name = 'Adams'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Young'), (
-    select
+        AND last_name = 'Young'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jennifer'
-        and last_name = 'Adams'), (
-    select
+        AND last_name = 'Adams'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sophia'
-        and last_name = 'Taylor'), (
-    select
+        AND last_name = 'Taylor'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sarah'
-        and last_name = 'Garcia'), (
-    select
+        AND last_name = 'Garcia'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Robert'
-        and last_name = 'Young'), (
-    select
+        AND last_name = 'Young'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Davis'), (
-    select
+        AND last_name = 'Davis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Joseph'
-        and last_name = 'Harris'), (
-    select
+        AND last_name = 'Harris'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Garcia'), (
-    select
+        AND last_name = 'Garcia'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'James'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Taylor'), (
-    select
+        AND last_name = 'Taylor'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Joseph'
-        and last_name = 'Davis'), (
-    select
+        AND last_name = 'Davis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'James'
-        and last_name = 'Anderson'), (
-    select
+        AND last_name = 'Anderson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Joseph'
-        and last_name = 'Anderson'), (
-    select
+        AND last_name = 'Anderson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Taylor'), (
-    select
+        AND last_name = 'Taylor'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'William'
-        and last_name = 'Taylor'), (
-    select
+        AND last_name = 'Taylor'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Michael'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'Anderson'), (
-    select
+        AND last_name = 'Anderson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Johnson'), (
-    select
+        AND last_name = 'Johnson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Michael'
-        and last_name = 'Clark'), (
-    select
+        AND last_name = 'Clark'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Anderson'), (
-    select
+        AND last_name = 'Anderson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jessica'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Joseph'
-        and last_name = 'Garcia'), (
-    select
+        AND last_name = 'Garcia'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'Clark'), (
-    select
+        AND last_name = 'Clark'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Robert'
-        and last_name = 'Young'), (
-    select
+        AND last_name = 'Young'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Daniel'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'James'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Anderson'), (
-    select
+        AND last_name = 'Anderson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'William'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Young'), (
-    select
+        AND last_name = 'Young'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Daniel'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'John'
-        and last_name = 'Smith'), (
-    select
+        AND last_name = 'Smith'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'James'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sarah'
-        and last_name = 'Young'), (
-    select
+        AND last_name = 'Young'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Michael'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Joseph'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sophia'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'John'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'James'
-        and last_name = 'Clark'), (
-    select
+        AND last_name = 'Clark'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Johnson'), (
-    select
+        AND last_name = 'Johnson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jennifer'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Mary'
-        and last_name = 'Smith'), (
-    select
+        AND last_name = 'Smith'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Robert'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sarah'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jennifer'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Robert'
-        and last_name = 'Taylor'), (
-    select
+        AND last_name = 'Taylor'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Joseph'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Johnson'), (
-    select
+        AND last_name = 'Johnson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Daniel'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Anderson'), (
-    select
+        AND last_name = 'Anderson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Robert'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Daniel'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Michael'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Young'), (
-    select
+        AND last_name = 'Young'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jessica'
-        and last_name = 'Taylor'), (
-    select
+        AND last_name = 'Taylor'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'John'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Johnson'), (
-    select
+        AND last_name = 'Johnson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'William'
-        and last_name = 'Anderson'), (
-    select
+        AND last_name = 'Anderson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Smith'), (
-    select
+        AND last_name = 'Smith'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'William'
-        and last_name = 'Johnson'), (
-    select
+        AND last_name = 'Johnson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'James'
-        and last_name = 'Johnson'), (
-    select
+        AND last_name = 'Johnson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Harris'), (
-    select
+        AND last_name = 'Harris'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Harris'), (
-    select
+        AND last_name = 'Harris'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'John'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'Garcia'), (
-    select
+        AND last_name = 'Garcia'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Joseph'
-        and last_name = 'Johnson'), (
-    select
+        AND last_name = 'Johnson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Michael'
-        and last_name = 'Anderson'), (
-    select
+        AND last_name = 'Anderson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sophia'
-        and last_name = 'Davis'), (
-    select
+        AND last_name = 'Davis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Mary'
-        and last_name = 'Smith'), (
-    select
+        AND last_name = 'Smith'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sarah'
-        and last_name = 'Young'), (
-    select
+        AND last_name = 'Young'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Harris'), (
-    select
+        AND last_name = 'Harris'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Daniel'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sarah'
-        and last_name = 'Adams'), (
-    select
+        AND last_name = 'Adams'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Daniel'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'James'
-        and last_name = 'Anderson'), (
-    select
+        AND last_name = 'Anderson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Taylor'), (
-    select
+        AND last_name = 'Taylor'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Lewis'), (
-    select
+        AND last_name = 'Lewis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Clark'), (
-    select
+        AND last_name = 'Clark'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'James'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Clark'), (
-    select
+        AND last_name = 'Clark'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'James'
-        and last_name = 'Anderson'), (
-    select
+        AND last_name = 'Anderson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'James'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'James'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Lewis'), (
-    select
+        AND last_name = 'Lewis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'William'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Garcia'), (
-    select
+        AND last_name = 'Garcia'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Taylor'), (
-    select
+        AND last_name = 'Taylor'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Robert'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'William'
-        and last_name = 'Johnson'), (
-    select
+        AND last_name = 'Johnson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Daniel'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Lewis'), (
-    select
+        AND last_name = 'Lewis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sophia'
-        and last_name = 'Lewis'), (
-    select
+        AND last_name = 'Lewis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'William'
-        and last_name = 'Harris'), (
-    select
+        AND last_name = 'Harris'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Michael'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Mary'
-        and last_name = 'Young'), (
-    select
+        AND last_name = 'Young'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Clark'), (
-    select
+        AND last_name = 'Clark'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Harris'), (
-    select
+        AND last_name = 'Harris'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Joseph'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jennifer'
-        and last_name = 'Smith'), (
-    select
+        AND last_name = 'Smith'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sophia'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Mary'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sophia'
-        and last_name = 'Lewis'), (
-    select
+        AND last_name = 'Lewis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Johnson'), (
-    select
+        AND last_name = 'Johnson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'John'
-        and last_name = 'Johnson'), (
-    select
+        AND last_name = 'Johnson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Daniel'
-        and last_name = 'Harris'), (
-    select
+        AND last_name = 'Harris'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sophia'
-        and last_name = 'Adams'), (
-    select
+        AND last_name = 'Adams'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Robert'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jessica'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Robert'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'William'
-        and last_name = 'Garcia'), (
-    select
+        AND last_name = 'Garcia'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Taylor'), (
-    select
+        AND last_name = 'Taylor'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sophia'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Robert'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Daniel'
-        and last_name = 'Garcia'), (
-    select
+        AND last_name = 'Garcia'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jennifer'
-        and last_name = 'Smith'), (
-    select
+        AND last_name = 'Smith'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jennifer'
-        and last_name = 'Smith'), (
-    select
+        AND last_name = 'Smith'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'James'
-        and last_name = 'Harris'), (
-    select
+        AND last_name = 'Harris'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'Clark'), (
-    select
+        AND last_name = 'Clark'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jennifer'
-        and last_name = 'Davis'), (
-    select
+        AND last_name = 'Davis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jessica'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sophia'
-        and last_name = 'Young'), (
-    select
+        AND last_name = 'Young'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Clark'), (
-    select
+        AND last_name = 'Clark'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'John'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jessica'
-        and last_name = 'Anderson'), (
-    select
+        AND last_name = 'Anderson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Taylor'), (
-    select
+        AND last_name = 'Taylor'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Mary'
-        and last_name = 'Adams'), (
-    select
+        AND last_name = 'Adams'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sarah'
-        and last_name = 'Young'), (
-    select
+        AND last_name = 'Young'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jennifer'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jennifer'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sarah'
-        and last_name = 'Clark'), (
-    select
+        AND last_name = 'Clark'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Mary'
-        and last_name = 'Adams'), (
-    select
+        AND last_name = 'Adams'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Mary'
-        and last_name = 'Young'), (
-    select
+        AND last_name = 'Young'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'William'
-        and last_name = 'Garcia'), (
-    select
+        AND last_name = 'Garcia'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Young'), (
-    select
+        AND last_name = 'Young'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sarah'
-        and last_name = 'Garcia'), (
-    select
+        AND last_name = 'Garcia'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jessica'
-        and last_name = 'Taylor'), (
-    select
+        AND last_name = 'Taylor'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sophia'
-        and last_name = 'Johnson'), (
-    select
+        AND last_name = 'Johnson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Daniel'
-        and last_name = 'Harris'), (
-    select
+        AND last_name = 'Harris'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sarah'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'James'
-        and last_name = 'Johnson'), (
-    select
+        AND last_name = 'Johnson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'Harris'), (
-    select
+        AND last_name = 'Harris'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Daniel'
-        and last_name = 'Garcia'), (
-    select
+        AND last_name = 'Garcia'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jessica'
-        and last_name = 'Lewis'), (
-    select
+        AND last_name = 'Lewis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Smith'), (
-    select
+        AND last_name = 'Smith'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Michael'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Young'), (
-    select
+        AND last_name = 'Young'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Robert'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Adams'), (
-    select
+        AND last_name = 'Adams'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'Garcia'), (
-    select
+        AND last_name = 'Garcia'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Anderson'), (
-    select
+        AND last_name = 'Anderson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sophia'
-        and last_name = 'Young'), (
-    select
+        AND last_name = 'Young'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jessica'
-        and last_name = 'Davis'), (
-    select
+        AND last_name = 'Davis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Robert'
-        and last_name = 'Lewis'), (
-    select
+        AND last_name = 'Lewis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'John'
-        and last_name = 'Garcia'), (
-    select
+        AND last_name = 'Garcia'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sarah'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Mary'
-        and last_name = 'Smith'), (
-    select
+        AND last_name = 'Smith'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'James'
-        and last_name = 'Davis'), (
-    select
+        AND last_name = 'Davis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Mary'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Joseph'
-        and last_name = 'Davis'), (
-    select
+        AND last_name = 'Davis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jennifer'
-        and last_name = 'Young'), (
-    select
+        AND last_name = 'Young'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Harris'), (
-    select
+        AND last_name = 'Harris'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'William'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Robert'
-        and last_name = 'Lewis'), (
-    select
+        AND last_name = 'Lewis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Mary'
-        and last_name = 'Clark'), (
-    select
+        AND last_name = 'Clark'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'Taylor'), (
-    select
+        AND last_name = 'Taylor'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sarah'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Daniel'
-        and last_name = 'Harris'), (
-    select
+        AND last_name = 'Harris'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Joseph'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Lewis'), (
-    select
+        AND last_name = 'Lewis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Joseph'
-        and last_name = 'Harris'), (
-    select
+        AND last_name = 'Harris'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Smith'), (
-    select
+        AND last_name = 'Smith'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Johnson'), (
-    select
+        AND last_name = 'Johnson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Emily'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Robert'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jessica'
-        and last_name = 'Lewis'), (
-    select
+        AND last_name = 'Lewis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sarah'
-        and last_name = 'Garcia'), (
-    select
+        AND last_name = 'Garcia'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Robert'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'James'
-        and last_name = 'Taylor'), (
-    select
+        AND last_name = 'Taylor'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jennifer'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Adams'), (
-    select
+        AND last_name = 'Adams'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Lewis'), (
-    select
+        AND last_name = 'Lewis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'William'
-        and last_name = 'Young'), (
-    select
+        AND last_name = 'Young'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Daniel'
-        and last_name = 'Garcia'), (
-    select
+        AND last_name = 'Garcia'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sophia'
-        and last_name = 'Smith'), (
-    select
+        AND last_name = 'Smith'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'James'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'William'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Robert'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'James'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Daniel'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'John'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jessica'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'John'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jennifer'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jessica'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Daniel'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Mary'
-        and last_name = 'Garcia'), (
-    select
+        AND last_name = 'Garcia'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Computer Science')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'William'
-        and last_name = 'Young'), (
-    select
+        AND last_name = 'Young'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Joseph'
-        and last_name = 'Turner'), (
-    select
+        AND last_name = 'Turner'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Mary'
-        and last_name = 'Young'), (
-    select
+        AND last_name = 'Young'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Clark'), (
-    select
+        AND last_name = 'Clark'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sarah'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Lewis'), (
-    select
+        AND last_name = 'Lewis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jessica'
-        and last_name = 'Taylor'), (
-    select
+        AND last_name = 'Taylor'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Daniel'
-        and last_name = 'Anderson'), (
-    select
+        AND last_name = 'Anderson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'James'
-        and last_name = 'Davis'), (
-    select
+        AND last_name = 'Davis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Mary'
-        and last_name = 'Wilson'), (
-    select
+        AND last_name = 'Wilson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sophia'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Clark'), (
-    select
+        AND last_name = 'Clark'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Smith'), (
-    select
+        AND last_name = 'Smith'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jennifer'
-        and last_name = 'Davis'), (
-    select
+        AND last_name = 'Davis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Physics')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'Anderson'), (
-    select
+        AND last_name = 'Anderson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sarah'
-        and last_name = 'Clark'), (
-    select
+        AND last_name = 'Clark'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Elizabeth'
-        and last_name = 'White'), (
-    select
+        AND last_name = 'White'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Robert'
-        and last_name = 'Smith'), (
-    select
+        AND last_name = 'Smith'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Michael'
-        and last_name = 'Anderson'), (
-    select
+        AND last_name = 'Anderson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Music')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Daniel'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Jessica'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Michael'
-        and last_name = 'Jones'), (
-    select
+        AND last_name = 'Jones'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Art')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Sarah'
-        and last_name = 'Martinez'), (
-    select
+        AND last_name = 'Martinez'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Daniel'
-        and last_name = 'Young'), (
-    select
+        AND last_name = 'Young'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Olivia'
-        and last_name = 'Smith'), (
-    select
+        AND last_name = 'Smith'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'David'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'John'
-        and last_name = 'Garcia'), (
-    select
+        AND last_name = 'Garcia'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Biology')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'John'
-        and last_name = 'Miller'), (
-    select
+        AND last_name = 'Miller'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Samantha'
-        and last_name = 'Clark'), (
-    select
+        AND last_name = 'Clark'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Geography')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Christopher'
-        and last_name = 'Jackson'), (
-    select
+        AND last_name = 'Jackson'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Math')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Michael'
-        and last_name = 'Clark'), (
-    select
+        AND last_name = 'Clark'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Ashley'
-        and last_name = 'Brown'), (
-    select
+        AND last_name = 'Brown'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Joseph'
-        and last_name = 'Lewis'), (
-    select
+        AND last_name = 'Lewis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'History')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Benjamin'
-        and last_name = 'Hall'), (
-    select
+        AND last_name = 'Hall'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Literature')),
     ((
-        select
+        SELECT
             student_id
-        from students
-    where
+        FROM students
+    WHERE
         first_name = 'Joseph'
-        and last_name = 'Lewis'), (
-    select
+        AND last_name = 'Lewis'), (
+    SELECT
         course_id
-    from courses
-where
+    FROM courses
+WHERE
     course_name = 'Chemistry'));
