@@ -2,7 +2,6 @@ package net.bnijik.schoolScheduler.repository.hibernate;
 
 import java.util.List;
 
-// Based on https://vladmihalcea.com/best-spring-data-jparepository/
 public interface HibernateRepository<T> {
 
     @Deprecated

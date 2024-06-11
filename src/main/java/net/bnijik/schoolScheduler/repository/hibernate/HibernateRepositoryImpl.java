@@ -15,7 +15,6 @@ import java.util.Objects;
 import java.util.function.Supplier;
 import java.util.stream.StreamSupport;
 
-// Based on https://vladmihalcea.com/best-spring-data-jparepository/
 public class HibernateRepositoryImpl<T, ID extends Serializable> extends SimpleJpaRepository<T, ID> implements HibernateRepository<T> {
     private final EntityManager entityManager;
 
