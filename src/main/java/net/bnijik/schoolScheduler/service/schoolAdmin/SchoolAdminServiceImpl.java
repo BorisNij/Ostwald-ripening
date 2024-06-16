@@ -4,9 +4,11 @@ import net.bnijik.schoolScheduler.mapper.SchoolModelMapper;
 import net.bnijik.schoolScheduler.repository.SchoolRepository;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
+@Transactional(readOnly = true)
 public class SchoolAdminServiceImpl<D, M> implements SchoolAdminService<D> {
     private final SchoolModelMapper<M, D> schoolModelMapper;
     private final SchoolRepository<M> schoolRepository;
@@ -22,6 +24,7 @@ public class SchoolAdminServiceImpl<D, M> implements SchoolAdminService<D> {
         return schoolModelMapper.modelsToDtos(all);
     }
 
+    @Transactional
     @Override
     public D create(D d) {
         final M model = schoolModelMapper.dtoToModel(d);
@@ -35,12 +38,14 @@ public class SchoolAdminServiceImpl<D, M> implements SchoolAdminService<D> {
         return modelOptional.map(schoolModelMapper::modelToDto);
     }
 
+    @Transactional
     @Override
     public D update(D d) {
         final M model = schoolModelMapper.dtoToModel(d);
         return schoolModelMapper.modelToDto(schoolRepository.update(model));
     }
 
+    @Transactional
     @Override
     public void delete(long id) {
         schoolRepository.deleteById(id);
