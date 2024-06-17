@@ -12,14 +12,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 public abstract class ProfessorMapper implements SchoolModelMapper<Professor, ProfessorDto> {
 
     @Autowired
-    protected CourseMapper courseMapper;
+    protected StudentMapper studentMapper;
 
     @Autowired
-    protected StudentMapper studentMapper;
+    protected CourseMapper courseMapper;
 
     @Mapping(target = "professorId", expression = "java(model.professorId())")
     @Mapping(target = "firstName", expression = "java(model.firstName())")
     @Mapping(target = "lastName", expression = "java(model.lastName())")
+    @Mapping(target = "courses", expression = "java(courseMapper.modelsToDtos(model.taughtCourses()))")
     @Override
     public abstract ProfessorDto modelToDto(Professor model);
 

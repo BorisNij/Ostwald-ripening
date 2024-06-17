@@ -3,7 +3,6 @@ package net.bnijik.schoolScheduler.dto;
 import org.springframework.data.domain.Slice;
 
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public record StudentDto(long studentId, GroupDto group, String firstName, String lastName, Slice<CourseDto> courses) {
 
@@ -26,15 +25,11 @@ public record StudentDto(long studentId, GroupDto group, String firstName, Strin
     }
 
     private String coursesToString(Slice<CourseDto> courses) {
-        String coursesString = courses.stream()
-                .map(course -> tabIndentCourses(course, 3))
-                .collect(Collectors.joining(",\n", "[\n", "\n\t]"));
-        return coursesString;
+        return ProfessorDto.coursesToString(courses);
     }
 
     private String tabIndentCourses(CourseDto course, int numTabs) {
-        String tabs = "\t".repeat(numTabs);
-        return tabs + course.toString().replace("\n", "\n" + tabs);
+        return ProfessorDto.tabIndentCourses(course, numTabs);
     }
 
 }
