@@ -6,6 +6,8 @@ import net.bnijik.schoolScheduler.service.course.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,18 +19,18 @@ public class CourseController {
     private final CourseService courseService;
 
     @GetMapping
-    public Slice<CourseDto> getCourses(Pageable pageable) {
-        return courseService.findAll(pageable);
+    public ResponseEntity<Slice<CourseDto>> getCourses(Pageable pageable) {
+        return new ResponseEntity<>(courseService.findAll(pageable), HttpStatus.OK);
     }
 
     @PostMapping
-    public CourseDto createCourse(@RequestBody CourseDto courseDto) {
-        return courseService.create(courseDto);
+    public ResponseEntity<CourseDto> createCourse(@RequestBody CourseDto courseDto) {
+        return new ResponseEntity<>(courseService.create(courseDto), HttpStatus.CREATED);
     }
 
     @PutMapping("{courseId}")
-    public CourseDto updateCourse(@PathVariable long courseId, @RequestBody CourseDto courseDto) {
-        return courseService.update(courseDto);
+    public ResponseEntity<CourseDto> updateCourse(@PathVariable long courseId, @RequestBody CourseDto courseDto) {
+        return new ResponseEntity<>(courseService.update(courseDto), HttpStatus.OK);
     }
 
     @DeleteMapping("{courseId}")

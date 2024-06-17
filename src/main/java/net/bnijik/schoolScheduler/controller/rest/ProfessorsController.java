@@ -6,6 +6,8 @@ import net.bnijik.schoolScheduler.service.professor.ProfessorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,18 +18,18 @@ public class ProfessorsController {
     private final ProfessorService professorService;
 
     @GetMapping
-    public Slice<ProfessorDto> getProfessors(Pageable pageable) {
-        return professorService.findAll(pageable);
+    public ResponseEntity<Slice<ProfessorDto>> getProfessors(Pageable pageable) {
+        return new ResponseEntity<>(professorService.findAll(pageable), HttpStatus.OK);
     }
 
     @PostMapping
-    public ProfessorDto createProfessor(@RequestBody ProfessorDto professorDto) {
-        return professorService.create(professorDto);
+    public ResponseEntity<ProfessorDto> createProfessor(@RequestBody ProfessorDto professorDto) {
+        return new ResponseEntity<>(professorService.create(professorDto), HttpStatus.CREATED);
     }
 
     @PutMapping("{professorId}")
-    public ProfessorDto updateProfessor(@PathVariable long professorId, @RequestBody ProfessorDto professorDto) {
-        return professorService.update(professorDto);
+    public ResponseEntity<ProfessorDto> updateProfessor(@PathVariable long professorId, @RequestBody ProfessorDto professorDto) {
+        return new ResponseEntity<>(professorService.update(professorDto), HttpStatus.OK);
     }
 
     @DeleteMapping("{professorId}")
