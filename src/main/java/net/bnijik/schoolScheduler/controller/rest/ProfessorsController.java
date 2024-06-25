@@ -1,11 +1,10 @@
 package net.bnijik.schoolScheduler.controller.rest;
 
 import lombok.RequiredArgsConstructor;
+import net.bnijik.schoolScheduler.dto.PagedDto;
 import net.bnijik.schoolScheduler.dto.ProfessorDto;
 import net.bnijik.schoolScheduler.service.professor.ProfessorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Slice;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,8 +17,12 @@ public class ProfessorsController {
     private final ProfessorService professorService;
 
     @GetMapping
-    public ResponseEntity<Slice<ProfessorDto>> getProfessors(Pageable pageable) {
-        return new ResponseEntity<>(professorService.findAll(pageable), HttpStatus.OK);
+    public ResponseEntity<PagedDto<ProfessorDto>> getProfessors(
+    @RequestParam(defaultValue = "0", required = false) int pageNum,
+    @RequestParam(defaultValue = "10", required = false) int pageSize,
+    @RequestParam(defaultValue = "professorId", required = false) String sortBy,
+    @RequestParam(defaultValue = "true", required = false) boolean isAsc) {
+        return new ResponseEntity<>(professorService.findAll(pageNum, pageSize, sortBy, isAsc), HttpStatus.OK);
     }
 
     @PostMapping

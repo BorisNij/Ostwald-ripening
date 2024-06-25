@@ -1,12 +1,16 @@
 package net.bnijik.schoolScheduler.service.schoolAdmin;
 
+import net.bnijik.schoolScheduler.dto.PagedDto;
 import net.bnijik.schoolScheduler.mapper.SchoolModelMapper;
 import net.bnijik.schoolScheduler.repository.SchoolRepository;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Slice;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.SortedSet;
 
 @Transactional(readOnly = true)
 public class SchoolAdminServiceImpl<D, M> implements SchoolAdminService<D> {
@@ -19,9 +23,13 @@ public class SchoolAdminServiceImpl<D, M> implements SchoolAdminService<D> {
     }
 
     @Override
-    public Slice<D> findAll(Pageable page) {
-        final Slice<M> all = schoolRepository.findAll(page);
-        return schoolModelMapper.modelsToDtos(all);
+    public PagedDto<D> findAll(int pageNum, int pageSize, String sortBy, boolean isAsc) {
+        final Sort sort = isAsc ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
+        final PageRequest pageRequest = PageRequest.of(pageNum, pageSize, sort);
+        final Page<M> page = schoolRepository.findAll(pageRequest);
+        final List<M> content = page.getContent();
+        final SortedSet<D> dtos = schoolModelMapper.modelsToDtos(content);
+        return new PagedDto<>(dtos, !page.isLast());
     }
 
     @Transactional

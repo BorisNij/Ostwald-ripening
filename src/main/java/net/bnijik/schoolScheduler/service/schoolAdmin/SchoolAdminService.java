@@ -1,12 +1,11 @@
 package net.bnijik.schoolScheduler.service.schoolAdmin;
 
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Slice;
+import net.bnijik.schoolScheduler.dto.PagedDto;
 
 import java.util.Optional;
 
 public interface SchoolAdminService<T> {
-    Slice<T> findAll(Pageable page);
+    PagedDto<T> findAll(int pageNum, int pageSize, String sortBy, boolean isAsc);
 
     T create(T t);
 

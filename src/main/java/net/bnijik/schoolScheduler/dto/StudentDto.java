@@ -1,10 +1,9 @@
 package net.bnijik.schoolScheduler.dto;
 
-import org.springframework.data.domain.Slice;
-
+import java.util.List;
 import java.util.Objects;
 
-public record StudentDto(long studentId, GroupDto group, String firstName, String lastName, Slice<CourseDto> courses) {
+public record StudentDto(long studentId, GroupDto group, String firstName, String lastName, List<CourseDto> courses) {
 
     public StudentDto {
         Objects.requireNonNull(firstName);
@@ -20,16 +19,8 @@ public record StudentDto(long studentId, GroupDto group, String firstName, Strin
                 + "\t\"group\": " + groupStr + ",\n"
                 + "\t\"firstName\": \"" + firstName + "\",\n"
                 + "\t\"lastName\": \"" + lastName + "\",\n"
-                + "\t\"courses\": " + coursesToString(courses) + "\n"
+                + "\t\"courses\": " + PagedDto.contentToString(courses) + "\n"
                 + "}";
-    }
-
-    private String coursesToString(Slice<CourseDto> courses) {
-        return ProfessorDto.coursesToString(courses);
-    }
-
-    private String tabIndentCourses(CourseDto course, int numTabs) {
-        return ProfessorDto.tabIndentCourses(course, numTabs);
     }
 
 }

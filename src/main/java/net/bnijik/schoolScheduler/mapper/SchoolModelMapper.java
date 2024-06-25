@@ -1,9 +1,7 @@
 package net.bnijik.schoolScheduler.mapper;
 
-import org.springframework.data.domain.Slice;
-import org.springframework.data.domain.SliceImpl;
-
-import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
 import java.util.stream.StreamSupport;
 
 public interface SchoolModelMapper<M, D> {
@@ -11,13 +9,12 @@ public interface SchoolModelMapper<M, D> {
 
     M dtoToModel(D dto);
 
-    default Slice<D> modelsToDtos(Iterable<M> models) {
-        final List<D> dtos = StreamSupport.stream(models.spliterator(), false).map(this::modelToDto).toList();
-        return new SliceImpl<>(dtos);
+    default SortedSet<D> modelsToDtos(Iterable<M> models) {
+        return new TreeSet<>(StreamSupport.stream(models.spliterator(), false).map(this::modelToDto).toList());
     }
 
-    default Slice<M> dtosToModels(Iterable<D> dtos) {
-        final List<M> models = StreamSupport.stream(dtos.spliterator(), false).map(this::dtoToModel).toList();
-        return new SliceImpl<>(models);
+    default SortedSet<M> dtosToModels(Iterable<D> dtos) {
+        return new TreeSet<>(StreamSupport.stream(dtos.spliterator(), false).map(this::dtoToModel).toList());
     }
+
 }
