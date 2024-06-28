@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS schedules, professors CASCADE;
+DROP TABLE IF EXISTS schedules, professors, main_instructors CASCADE;
 
 CREATE EXTENSION IF NOT EXISTS btree_gist;
 
@@ -31,3 +31,25 @@ CREATE TABLE main_instructors (
     course_id serial PRIMARY KEY REFERENCES courses(course_id) ON DELETE CASCADE,
     professor_id int REFERENCES professors(professor_id) ON DELETE SET NULL
 );
+
+-- Create a function to update main instructor based on professor teaching alone
+CREATE OR REPLACE FUNCTION update_main_instructor()
+RETURNS TRIGGER AS $$
+BEGIN
+    DELETE FROM main_instructors WHERE course_id = NEW.course_id; -- Remove existing main instructor for the course
+    INSERT INTO main_instructors (course_id, professor_id)
+    SELECT NEW.course_id, NEW.professor_id
+    WHERE EXISTS (
+        SELECT 1 FROM professor_course pc
+        WHERE pc.course_id = NEW.course_id
+        GROUP BY pc.course_id
+        HAVING count(*) = 1
+    );
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Create trigger to update main instructor on professor_course changes
+CREATE TRIGGER main_instructor_update
+AFTER INSERT OR UPDATE ON professor_course
+FOR EACH ROW EXECUTE FUNCTION update_main_instructor();
