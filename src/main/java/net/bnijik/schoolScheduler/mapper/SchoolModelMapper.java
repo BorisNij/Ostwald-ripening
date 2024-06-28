@@ -1,7 +1,8 @@
 package net.bnijik.schoolScheduler.mapper;
 
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 public interface SchoolModelMapper<M, D> {
@@ -9,12 +10,16 @@ public interface SchoolModelMapper<M, D> {
 
     M dtoToModel(D dto);
 
-    default SortedSet<D> modelsToDtos(Iterable<M> models) {
-        return new TreeSet<>(StreamSupport.stream(models.spliterator(), false).map(this::modelToDto).toList());
+    default Set<D> modelsToDtos(Iterable<M> models) {
+        return StreamSupport.stream(models.spliterator(), false)
+                .map(this::modelToDto)
+                .collect(Collectors.toCollection(LinkedHashSet::new));
     }
 
-    default SortedSet<M> dtosToModels(Iterable<D> dtos) {
-        return new TreeSet<>(StreamSupport.stream(dtos.spliterator(), false).map(this::dtoToModel).toList());
+    default Set<M> dtosToModels(Iterable<D> dtos) {
+        return StreamSupport.stream(dtos.spliterator(), false)
+                .map(this::dtoToModel)
+                .collect(Collectors.toCollection(LinkedHashSet::new));
     }
 
 }

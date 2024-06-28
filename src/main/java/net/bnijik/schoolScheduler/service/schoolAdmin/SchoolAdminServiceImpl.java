@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.SortedSet;
+import java.util.Set;
 
 @Transactional(readOnly = true)
 public class SchoolAdminServiceImpl<D, M> implements SchoolAdminService<D> {
@@ -28,7 +28,7 @@ public class SchoolAdminServiceImpl<D, M> implements SchoolAdminService<D> {
         final PageRequest pageRequest = PageRequest.of(pageNum, pageSize, sort);
         final Page<M> page = schoolRepository.findAll(pageRequest);
         final List<M> content = page.getContent();
-        final SortedSet<D> dtos = schoolModelMapper.modelsToDtos(content);
+        final Set<D> dtos = schoolModelMapper.modelsToDtos(content);
         return new PagedDto<>(dtos, !page.isLast());
     }
 

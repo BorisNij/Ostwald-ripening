@@ -1,9 +1,9 @@
 package net.bnijik.schoolScheduler.dto;
 
-import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
-public record StudentDto(long studentId, GroupDto group, String firstName, String lastName, List<CourseDto> courses) {
+public record StudentDto(long studentId, GroupDto group, String firstName, String lastName, Set<CourseDto> courses) {
 
     public StudentDto {
         Objects.requireNonNull(firstName);

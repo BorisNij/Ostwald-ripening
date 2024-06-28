@@ -5,8 +5,8 @@ import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.util.Collection;
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -36,7 +36,7 @@ public class Student {
             joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "course_id"))
     @Builder.Default
-    private SortedSet<Course> courses = new TreeSet<>();
+    private Set<Course> courses = new LinkedHashSet<>();
 
 
     public void addCourse(@NonNull final Course course) {

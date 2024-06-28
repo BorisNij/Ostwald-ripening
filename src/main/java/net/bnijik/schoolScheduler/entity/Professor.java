@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
 
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -30,7 +30,7 @@ public class Professor {
     @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinTable(name = "professor_course", joinColumns = @JoinColumn(name = "professor_id"), inverseJoinColumns = @JoinColumn(name = "course_id"))
     @Builder.Default
-    private SortedSet<Course> taughtCourses = new TreeSet<>();
+    private Set<Course> taughtCourses = new LinkedHashSet<>();
 
     @Override
     public boolean equals(Object obj) {

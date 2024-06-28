@@ -6,5 +6,5 @@ import org.springframework.data.repository.NoRepositoryBean;
 
 
 @NoRepositoryBean
-public interface SchoolRepository<M> extends JpaRepository<M, Long>, HibernateRepository<M> {
+public interface SchoolRepository<M> extends HibernateRepository<M>, JpaRepository<M, Long> {
 }
