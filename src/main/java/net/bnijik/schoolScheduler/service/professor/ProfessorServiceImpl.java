@@ -38,18 +38,18 @@ public class ProfessorServiceImpl extends SchoolAdminServiceImpl<ProfessorDto, P
 
     @Override
     public ProfessorDto create(ProfessorDto professorDto) {
-        if (professorDto.courses().isEmpty()) {
+        if (professorDto.taughtCourses().isEmpty()) {
             return super.create(professorDto);
         }
 
-        final Set<CourseDto> newCourses = professorDto.courses()
+        final Set<CourseDto> newCourses = professorDto.taughtCourses()
                 .stream()
                 .filter(courseDto -> courseDto.courseId() == 0)
                 .collect(Collectors.toCollection(LinkedHashSet::new));
         if (!newCourses.isEmpty()) {
             return super.create(new ProfessorDto(0, professorDto.firstName(), professorDto.lastName(), newCourses));
         }
-        final Set<CourseDto> existingCourses = professorDto.courses()
+        final Set<CourseDto> existingCourses = professorDto.taughtCourses()
                 .stream()
                 .filter(courseDto -> courseDto.courseId() != 0)
                 .collect(Collectors.toCollection(LinkedHashSet::new));
