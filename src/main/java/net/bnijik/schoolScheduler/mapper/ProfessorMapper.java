@@ -17,14 +17,14 @@ public abstract class ProfessorMapper implements SchoolModelMapper<Professor, Pr
     @Mapping(target = "professorId", expression = "java(model.professorId())")
     @Mapping(target = "firstName", expression = "java(model.firstName())")
     @Mapping(target = "lastName", expression = "java(model.lastName())")
-    @Mapping(target = "courses", expression = "java(courseMapper.modelsToDtos(model.taughtCourses()))")
+    @Mapping(target = "taughtCourses", expression = "java(courseMapper.modelsToDtos(model.taughtCourses()))")
     @Override
     public abstract ProfessorDto modelToDto(Professor model);
 
     @Mapping(target = "professorId", expression = "java(dto.professorId())")
     @Mapping(target = "firstName", expression = "java(dto.firstName())")
     @Mapping(target = "lastName", expression = "java(dto.lastName())")
-    @Mapping(target = "taughtCourses", expression = "java(courseMapper.dtosToModels(dto.courses()))")
+    @Mapping(target = "taughtCourses", expression = "java(courseMapper.dtosToModels(dto.taughtCourses()))")
     @Override
     public abstract Professor dtoToModel(ProfessorDto dto);
 

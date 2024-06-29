@@ -1,9 +1,12 @@
 package net.bnijik.schoolScheduler.dto;
 
+import lombok.Builder;
+
 import java.util.Objects;
 import java.util.Set;
 
-public record ProfessorDto(long professorId, String firstName, String lastName, Set<CourseDto> courses) {
+@Builder
+public record ProfessorDto(long professorId, String firstName, String lastName, Set<CourseDto> taughtCourses) {
     public ProfessorDto {
         Objects.requireNonNull(firstName);
         Objects.requireNonNull(lastName);
@@ -15,7 +18,7 @@ public record ProfessorDto(long professorId, String firstName, String lastName, 
                 + "\t\"professorId\": " + professorId + ",\n"
                 + "\t\"firstName\": \"" + firstName + "\",\n"
                 + "\t\"lastName\": \"" + lastName + "\",\n"
-                + "\t\"courses\": " + PagedDto.contentToString(courses) + "\n"
+                + "\t\"courses\": " + PagedDto.contentToString(taughtCourses) + "\n"
                 + "}";
     }
 
