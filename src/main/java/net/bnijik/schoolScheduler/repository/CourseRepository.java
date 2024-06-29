@@ -9,9 +9,11 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Repository
 public interface CourseRepository extends SchoolRepository<Course> {
+    Set<Course> findAllByMainInstructorProfessorId(long professorId);
     Slice<Course> findAllByStudentsStudentId(long studentId, Pageable pageable);
 
     Slice<Course> findAllByCourseIdIn(List<Long> courseIds, Pageable pageable);
