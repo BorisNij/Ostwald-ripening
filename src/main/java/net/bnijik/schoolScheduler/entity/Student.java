@@ -7,6 +7,7 @@ import lombok.experimental.Accessors;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,15 +23,22 @@ public class Student {
     @SequenceGenerator(name = "student_seq_generator", sequenceName = "students_student_id_seq", allocationSize = 1)
     @Column(name = "student_id", updatable = false, nullable = false)
     private long studentId;
+
+    @Column(nullable = false, unique = true, updatable = false, insertable = false)
+    private UUID guid;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "group_id")
     private Group group;
+
     @NonNull
     @Column(name = "first_name", nullable = false)
     private String firstName;
+
     @NonNull
     @Column(name = "last_name", nullable = false)
     private String lastName;
+
     @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinTable(name = "student_course",
             joinColumns = @JoinColumn(name = "student_id"),

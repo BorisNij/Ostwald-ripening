@@ -5,6 +5,7 @@ import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.time.OffsetDateTime;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,6 +20,9 @@ public class Schedule implements Comparable<Schedule>{
     @SequenceGenerator(name = "schedule_seq_generator", sequenceName = "schedules_schedule_id_seq", allocationSize = 1)
     @Column(name = "schedule_id")
     private long scheduleId;
+
+    @Column(nullable = false, unique = true, updatable = false, insertable = false)
+    private UUID guid;
 
     @Column(nullable = false)
     private String room;

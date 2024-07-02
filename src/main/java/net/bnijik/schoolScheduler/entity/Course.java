@@ -7,6 +7,7 @@ import lombok.experimental.Accessors;
 import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,14 +22,21 @@ public class Course implements Comparable<Course>, Serializable {
     @SequenceGenerator(name = "course_seq_generator", sequenceName = "courses_course_id_seq", allocationSize = 1)
     @Column(name = "course_id", updatable = false, nullable = false)
     private long courseId;
+
+    @Column(nullable = false, unique = true, updatable = false, insertable = false)
+    private UUID guid;
+
     @NonNull
     @Column(name = "course_name", unique = true, nullable = false)
     private String courseName;
+
     @Column(name = "course_description")
     private String courseDescription;
+
     @ManyToMany(mappedBy = "courses")
     @OrderBy("studentId")
     private Set<Student> students = new LinkedHashSet<>();
+
     @OneToOne
     @JoinTable(
             name = "main_instructors",

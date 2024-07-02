@@ -6,6 +6,7 @@ import lombok.experimental.Accessors;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,6 +22,8 @@ public class Professor {
     @SequenceGenerator(name = "professor_seq_generator", sequenceName = "professors_professor_id_seq", allocationSize = 1)
     @Column(name = "professor_id", updatable = false, nullable = false)
     private long professorId;
+    @Column(nullable = false, unique = true, updatable = false, insertable = false)
+    private UUID guid;
     @NonNull
     @Column(name = "first_name", nullable = false)
     private String firstName;
