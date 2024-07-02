@@ -4,10 +4,7 @@ import lombok.NonNull;
 
 import java.util.Objects;
 
-public record CourseDto(
-        long courseId,
-        String courseName,
-        String courseDescription) implements Comparable<CourseDto> {
+public record CourseDto(long courseId, String courseName, String courseDescription) implements Comparable<CourseDto> {
 
     public CourseDto {
         Objects.requireNonNull(courseName);

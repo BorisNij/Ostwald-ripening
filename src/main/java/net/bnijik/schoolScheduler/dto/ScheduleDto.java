@@ -3,8 +3,7 @@ package net.bnijik.schoolScheduler.dto;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-public record ScheduleDto(long scheduleId, String room, OffsetDateTime startTime, OffsetDateTime endTime,
-                          CourseDto course) {
+public record ScheduleDto(long scheduleId, String room, OffsetDateTime startTime, OffsetDateTime endTime, CourseDto course) {
     public ScheduleDto{
         Objects.requireNonNull(room);
         Objects.requireNonNull(startTime);

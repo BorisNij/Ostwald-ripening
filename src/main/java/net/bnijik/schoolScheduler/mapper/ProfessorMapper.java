@@ -36,6 +36,8 @@ public abstract class ProfessorMapper implements SchoolModelMapper<Professor, Pr
     @Override
     public abstract Professor dtoToModel(ProfessorDto dto);
 
+    public abstract Professor createDtoToModel(ProfessorCreateDto professorCreateDto);
+
 }
 
 
