@@ -6,13 +6,13 @@ import net.bnijik.schoolScheduler.repository.SchoolRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.UUID;
 
-@Transactional(readOnly = true)
+
 public class SchoolAdminServiceImpl<D, M> implements SchoolAdminService<D> {
     private final SchoolModelMapper<M, D> schoolModelMapper;
     private final SchoolRepository<M> schoolRepository;
@@ -20,6 +20,12 @@ public class SchoolAdminServiceImpl<D, M> implements SchoolAdminService<D> {
     public SchoolAdminServiceImpl(SchoolModelMapper<M, D> schoolModelMapper, SchoolRepository<M> schoolRepository) {
         this.schoolModelMapper = schoolModelMapper;
         this.schoolRepository = schoolRepository;
+    }
+
+    @Override
+    public Optional<D> findByGuid(UUID guid) {
+        final Optional<M> modelOptional = schoolRepository.findByGuid(guid);
+        return modelOptional.map(schoolModelMapper::modelToDto);
     }
 
     @Override
@@ -32,7 +38,6 @@ public class SchoolAdminServiceImpl<D, M> implements SchoolAdminService<D> {
         return new PagedDto<>(dtos, !page.isLast());
     }
 
-    @Transactional
     @Override
     public D create(D d) {
         final M model = schoolModelMapper.dtoToModel(d);
@@ -46,16 +51,15 @@ public class SchoolAdminServiceImpl<D, M> implements SchoolAdminService<D> {
         return modelOptional.map(schoolModelMapper::modelToDto);
     }
 
-    @Transactional
     @Override
     public D update(D d) {
         final M model = schoolModelMapper.dtoToModel(d);
         return schoolModelMapper.modelToDto(schoolRepository.update(model));
     }
 
-    @Transactional
     @Override
     public void delete(long id) {
         schoolRepository.deleteById(id);
     }
+
 }
