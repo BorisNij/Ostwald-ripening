@@ -4,12 +4,12 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-public record PagedDto<T>(Iterable<T> content, boolean hasNext) {
+public record PagedDto<T>(Iterable<T> page, boolean hasNext) {
     public PagedDto {
-        Objects.requireNonNull(content);
+        Objects.requireNonNull(page);
     }
 
-    static <T> String contentToString(Iterable<T> content) {
+    public static <T> String contentToString(Iterable<T> content) {
         return StreamSupport.stream(content.spliterator(), false)
                 .map(PagedDto::tabIndentContentItem)
                 .collect(Collectors.joining(",\n", "[\n", "\n\t]"));
@@ -23,7 +23,7 @@ public record PagedDto<T>(Iterable<T> content, boolean hasNext) {
     @Override
     public String toString() {
         return "{\n"
-                + "\t\"content\": " + contentToString(content) + ",\n"
+                + "\t\"content\": " + contentToString(page) + ",\n"
                 + "\t\"hasNext\": " + hasNext + "\n"
                 + "}";
     }

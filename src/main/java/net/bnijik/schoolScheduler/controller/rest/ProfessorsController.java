@@ -17,12 +17,11 @@ public class ProfessorsController {
     private final ProfessorService professorService;
 
     @GetMapping
-    public ResponseEntity<PagedDto<ProfessorDto>> getProfessors(
-    @RequestParam(defaultValue = "0", required = false) int pageNum,
-    @RequestParam(defaultValue = "10", required = false) int pageSize,
-    @RequestParam(defaultValue = "professorId", required = false) String sortBy,
-    @RequestParam(defaultValue = "true", required = false) boolean isAsc) {
-        return new ResponseEntity<>(professorService.findAll(pageNum, pageSize, sortBy, isAsc), HttpStatus.OK);
+    public ResponseEntity<PagedDto<ProfessorDto>> getProfessors(@RequestParam(defaultValue = "0", required = false) int pageNum,
+                                                                @RequestParam(defaultValue = "10", required = false) int pageSize,
+                                                                @RequestParam(defaultValue = "professorId", required = false) String sortBy,
+                                                                @RequestParam(defaultValue = "true", required = false) boolean isAsc) {
+        return ResponseEntity.ok(professorService.findAll(pageNum, pageSize, sortBy, isAsc));
     }
 
     @PostMapping
