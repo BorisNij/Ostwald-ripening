@@ -45,6 +45,19 @@ public class Course implements Comparable<Course>, Serializable {
     )
     private Professor mainInstructor;
 
+    @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
+    private Set<Schedule> schedules = new LinkedHashSet<>();
+
+    public void addSchedule(Schedule schedule) {
+        schedules.add(schedule);
+        schedule.course(this);
+    }
+
+    public void removeSchedule(Schedule schedule) {
+        schedules.add(schedule);
+        schedule.course(null);
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == this) return true;
