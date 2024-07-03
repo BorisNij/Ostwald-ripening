@@ -57,7 +57,7 @@ public class Group {
 
     public void removeStudent(Student student) {
         students.remove(student);
-        student.group(this);
+        student.group(null);
     }
 
     @Override
