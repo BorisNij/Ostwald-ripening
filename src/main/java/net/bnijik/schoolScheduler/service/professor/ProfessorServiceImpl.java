@@ -1,9 +1,11 @@
 package net.bnijik.schoolScheduler.service.professor;
 
+import net.bnijik.schoolScheduler.dto.CourseDto;
 import net.bnijik.schoolScheduler.dto.professor.ProfessorCreateDto;
 import net.bnijik.schoolScheduler.dto.professor.ProfessorDto;
 import net.bnijik.schoolScheduler.dto.professor.ProfessorUpdateDto;
 import net.bnijik.schoolScheduler.entity.Professor;
+import net.bnijik.schoolScheduler.mapper.CourseMapper;
 import net.bnijik.schoolScheduler.mapper.ProfessorMapper;
 import net.bnijik.schoolScheduler.repository.ProfessorRepository;
 import net.bnijik.schoolScheduler.service.schoolAdmin.SchoolAdminServiceImpl;
@@ -16,23 +18,23 @@ import java.util.UUID;
 public class ProfessorServiceImpl extends SchoolAdminServiceImpl<ProfessorDto, Professor> implements ProfessorService {
 
     private final ProfessorMapper professorMapper;
-    protected final ProfessorRepository professorRepository;
+    private final ProfessorRepository professorRepository;
+    private final CourseMapper courseMapper;
 
     @Autowired
     public ProfessorServiceImpl(ProfessorMapper professorMapper,
                                 ProfessorRepository professorRepository,
-                                ProfessorMapper professorMapper1,
-                                ProfessorRepository professorRepository1) {
+                                CourseMapper courseMapper) {
         super(professorMapper, professorRepository);
-        this.professorMapper = professorMapper1;
-        this.professorRepository = professorRepository1;
+        this.professorMapper = professorMapper;
+        this.professorRepository = professorRepository;
+        this.courseMapper = courseMapper;
     }
 
     @Override
     public ProfessorDto update(UUID professorGuid, ProfessorUpdateDto professorUpdateDto) {
         final Professor professorToUpdate = professorRepository.findByGuid(professorGuid).orElseThrow();
-        professorToUpdate.firstName(professorUpdateDto.firstName())
-                .lastName(professorUpdateDto.lastName());
+        professorToUpdate.firstName(professorUpdateDto.firstName()).lastName(professorUpdateDto.lastName());
         final Professor updated = professorRepository.update(professorToUpdate);
         return professorMapper.modelToDto(updated);
     }
@@ -41,6 +43,14 @@ public class ProfessorServiceImpl extends SchoolAdminServiceImpl<ProfessorDto, P
     public ProfessorDto create(ProfessorCreateDto professorCreateDto) {
         final Professor professor = professorMapper.createDtoToModel(professorCreateDto);
         return professorMapper.modelToDto(professorRepository.persist(professor));
+    }
+
+    @Override
+    public ProfessorDto addTeachingCourse(UUID professorGuid, CourseDto courseDto) {
+        final Professor professor = professorRepository.findByGuid(professorGuid).orElseThrow();
+        professor.taughtCourses().add(courseMapper.dtoToModel(courseDto));
+        final Professor updatedProfessor = professorRepository.merge(professor);
+        return professorMapper.modelToDto(updatedProfessor);
     }
 
 }

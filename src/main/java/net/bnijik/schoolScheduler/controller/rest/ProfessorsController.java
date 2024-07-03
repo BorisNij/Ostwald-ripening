@@ -1,6 +1,7 @@
 package net.bnijik.schoolScheduler.controller.rest;
 
 import lombok.RequiredArgsConstructor;
+import net.bnijik.schoolScheduler.dto.CourseDto;
 import net.bnijik.schoolScheduler.dto.PagedDto;
 import net.bnijik.schoolScheduler.dto.professor.ProfessorCreateDto;
 import net.bnijik.schoolScheduler.dto.professor.ProfessorDto;
@@ -53,5 +54,10 @@ public class ProfessorsController {
         return HttpStatus.NO_CONTENT;
     }
 
+    @PostMapping(path = "/{professorGuid}")
+    public ResponseEntity<ProfessorDto> addTeachingCourse(@PathVariable UUID professorGuid, @RequestBody CourseDto courseDto) {
+        final ProfessorDto professorDto = professorService.addTeachingCourse(professorGuid, courseDto);
+        return new ResponseEntity<>(professorDto, HttpStatus.CREATED);
+    }
 
 }

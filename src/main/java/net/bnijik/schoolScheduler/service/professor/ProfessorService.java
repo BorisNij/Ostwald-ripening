@@ -1,5 +1,6 @@
 package net.bnijik.schoolScheduler.service.professor;
 
+import net.bnijik.schoolScheduler.dto.CourseDto;
 import net.bnijik.schoolScheduler.dto.professor.ProfessorCreateDto;
 import net.bnijik.schoolScheduler.dto.professor.ProfessorDto;
 import net.bnijik.schoolScheduler.dto.professor.ProfessorUpdateDto;
@@ -15,4 +16,7 @@ public interface ProfessorService extends SchoolAdminService<ProfessorDto> {
 
     @Transactional
     ProfessorDto create(ProfessorCreateDto professorCreateDto);
+
+    @Transactional
+    ProfessorDto addTeachingCourse(UUID professorGuid, CourseDto courseDto);
 }
