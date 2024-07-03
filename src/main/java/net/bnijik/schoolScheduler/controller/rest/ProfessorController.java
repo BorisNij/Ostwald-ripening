@@ -17,7 +17,7 @@ import java.util.UUID;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(path = "/api/professors")
-public class ProfessorsController {
+public class ProfessorController {
     @Autowired
     private final ProfessorService professorService;
 
