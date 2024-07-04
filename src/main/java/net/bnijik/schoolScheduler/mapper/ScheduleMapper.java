@@ -1,7 +1,8 @@
 package net.bnijik.schoolScheduler.mapper;
 
 
-import net.bnijik.schoolScheduler.dto.ScheduleDto;
+import net.bnijik.schoolScheduler.dto.schedule.ScheduleCreateDto;
+import net.bnijik.schoolScheduler.dto.schedule.ScheduleDto;
 import net.bnijik.schoolScheduler.entity.Schedule;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -15,14 +16,16 @@ public abstract class ScheduleMapper implements SchoolModelMapper<Schedule, Sche
     protected CourseMapper courseMapper;
 
     @Mapping(target = "scheduleId", expression = "java(model.scheduleId())")
+    @Mapping(target = "guid", expression = "java(model.guid())")
     @Mapping(target = "room", expression = "java(model.room())")
     @Mapping(target = "startTime", expression = "java(model.startTime())")
     @Mapping(target = "endTime", expression = "java(model.endTime())")
-    @Mapping(target = "course", expression = "java(courseMapper.modelToDto(model.course()))")
     @Override
     public abstract ScheduleDto modelToDto(Schedule model);
 
     @Override
     public abstract Schedule dtoToModel(ScheduleDto dto);
+
+    public abstract Schedule createDtoToModel(ScheduleCreateDto scheduleCreateDto);
 
 }

@@ -1,9 +1,13 @@
-package net.bnijik.schoolScheduler.dto;
+package net.bnijik.schoolScheduler.dto.schedule;
+
+import lombok.Builder;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
+import java.util.UUID;
 
-public record ScheduleDto(long scheduleId, String room, OffsetDateTime startTime, OffsetDateTime endTime, CourseDto course) {
+@Builder
+public record ScheduleDto(long scheduleId, UUID guid, String room, OffsetDateTime startTime, OffsetDateTime endTime) {
     public ScheduleDto{
         Objects.requireNonNull(room);
         Objects.requireNonNull(startTime);
@@ -14,10 +18,10 @@ public record ScheduleDto(long scheduleId, String room, OffsetDateTime startTime
     public String toString() {
         return "{\n"
                 + "\t\"scheduleId\": " + scheduleId + ",\n"
+                + "\t\"scheduleId\": " + guid + ",\n"
                 + "\t\"room\": \"" + room + "\",\n"
                 + "\t\"startTime\": \"" + startTime + "\"\n"
                 + "\t\"endTime\": \"" + endTime + "\"\n"
-                + "\t\"course\": \"" + course + "\"\n"
                 + "}";
     }
 }
