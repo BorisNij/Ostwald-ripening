@@ -41,7 +41,7 @@ public class ProfessorController {
     }
 
     @PutMapping(path = "/{professorGuid}")
-    ResponseEntity<ProfessorDto> updateProfessor(@PathVariable UUID professorGuid,
+    public ResponseEntity<ProfessorDto> updateProfessor(@PathVariable UUID professorGuid,
                                                  @RequestBody ProfessorUpdateDto professorUpdateDto) {
         return ResponseEntity.ok(professorService.update(professorGuid,
                                                             professorUpdateDto));
