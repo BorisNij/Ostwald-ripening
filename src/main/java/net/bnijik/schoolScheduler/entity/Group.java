@@ -7,6 +7,7 @@ import lombok.experimental.Accessors;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,11 +22,16 @@ public class Group {
     @OneToMany(mappedBy = "group", fetch = FetchType.LAZY)
     @OrderBy("studentId")
     private List<Student> students = new ArrayList<>();
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "group_seq_generator")
     @SequenceGenerator(name = "group_seq_generator", sequenceName = "groups_group_id_seq", allocationSize = 1)
     @Column(name = "group_id", updatable = false, nullable = false)
     private long groupId;
+
+    @Column(nullable = false, unique = true, updatable = false)
+    private UUID guid;
+
     @NonNull
     @Column(name = "group_name", unique = true, nullable = false)
     private String groupName;
@@ -51,7 +57,7 @@ public class Group {
 
     public void removeStudent(Student student) {
         students.remove(student);
-        student.group(this);
+        student.group(null);
     }
 
     @Override
@@ -72,4 +78,10 @@ public class Group {
         return "Group[" + "groupId=" + groupId + ", " + "groupName=" + groupName + ']';
     }
 
+    @PrePersist
+    public void prePersist() {
+        if (guid == null) {
+            guid = UUID.randomUUID();
+        }
+    }
 }

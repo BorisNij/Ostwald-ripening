@@ -5,6 +5,7 @@ import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.time.OffsetDateTime;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,6 +21,9 @@ public class Schedule implements Comparable<Schedule>{
     @Column(name = "schedule_id")
     private long scheduleId;
 
+    @Column(nullable = false, unique = true, updatable = false)
+    private UUID guid;
+
     @Column(nullable = false)
     private String room;
 
@@ -30,6 +34,7 @@ public class Schedule implements Comparable<Schedule>{
     private OffsetDateTime endTime;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "course_id")
     private Course course;
 
     @Override
@@ -67,5 +72,12 @@ public class Schedule implements Comparable<Schedule>{
             return 1;
         }
         return 0;
+    }
+
+    @PrePersist
+    public void prePersist() {
+        if (guid == null) {
+            guid = UUID.randomUUID();
+        }
     }
 }

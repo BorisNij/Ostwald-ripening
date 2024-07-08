@@ -7,6 +7,7 @@ import lombok.experimental.Accessors;
 import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,14 +22,21 @@ public class Course implements Comparable<Course>, Serializable {
     @SequenceGenerator(name = "course_seq_generator", sequenceName = "courses_course_id_seq", allocationSize = 1)
     @Column(name = "course_id", updatable = false, nullable = false)
     private long courseId;
+
+    @Column(nullable = false, unique = true, updatable = false, insertable = false)
+    private UUID guid;
+
     @NonNull
     @Column(name = "course_name", unique = true, nullable = false)
     private String courseName;
+
     @Column(name = "course_description")
     private String courseDescription;
+
     @ManyToMany(mappedBy = "courses")
     @OrderBy("studentId")
     private Set<Student> students = new LinkedHashSet<>();
+
     @OneToOne
     @JoinTable(
             name = "main_instructors",
@@ -36,6 +44,19 @@ public class Course implements Comparable<Course>, Serializable {
             inverseJoinColumns = @JoinColumn(name = "professor_id")
     )
     private Professor mainInstructor;
+
+    @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
+    private Set<Schedule> schedules = new LinkedHashSet<>();
+
+    public void addSchedule(Schedule schedule) {
+        schedules.add(schedule);
+        schedule.course(this);
+    }
+
+    public void removeSchedule(Schedule schedule) {
+        schedules.add(schedule);
+        schedule.course(null);
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -61,5 +82,12 @@ public class Course implements Comparable<Course>, Serializable {
     @Override
     public int compareTo(@NonNull Course o) {
         return Long.compare(this.courseId, o.courseId);
+    }
+
+    @PrePersist
+    public void prePersist() {
+        if (guid == null) {
+            guid = UUID.randomUUID();
+        }
     }
 }

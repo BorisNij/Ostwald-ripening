@@ -1,6 +1,7 @@
 package net.bnijik.schoolScheduler.mapper;
 
-import net.bnijik.schoolScheduler.dto.GroupDto;
+import net.bnijik.schoolScheduler.dto.group.GroupDto;
+import net.bnijik.schoolScheduler.dto.group.GroupUpsertDto;
 import net.bnijik.schoolScheduler.entity.Group;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -15,5 +16,7 @@ public abstract class GroupMapper implements SchoolModelMapper<Group, GroupDto> 
 
     @Override
     public abstract Group dtoToModel(GroupDto dto);
+
+    public abstract Group createDtoToModel(GroupUpsertDto groupCreateDto);
 
 }

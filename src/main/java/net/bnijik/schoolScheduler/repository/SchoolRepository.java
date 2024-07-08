@@ -4,7 +4,13 @@ import net.bnijik.schoolScheduler.repository.hibernate.HibernateRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.NoRepositoryBean;
 
+import java.util.Optional;
+import java.util.UUID;
+
 
 @NoRepositoryBean
-public interface SchoolRepository<M> extends JpaRepository<M, Long>, HibernateRepository<M> {
+public interface SchoolRepository<M> extends HibernateRepository<M>, JpaRepository<M, Long> {
+
+    Optional<M> findByGuid(UUID guid);
+
 }

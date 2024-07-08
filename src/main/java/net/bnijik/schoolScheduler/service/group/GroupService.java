@@ -1,14 +1,17 @@
 package net.bnijik.schoolScheduler.service.group;
 
-import net.bnijik.schoolScheduler.dto.GroupDto;
+import net.bnijik.schoolScheduler.dto.group.GroupDto;
+import net.bnijik.schoolScheduler.dto.group.GroupUpsertDto;
 import net.bnijik.schoolScheduler.service.schoolAdmin.SchoolAdminService;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Slice;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Optional;
+import java.util.UUID;
 
+@Transactional(readOnly = true)
 public interface GroupService extends SchoolAdminService<GroupDto> {
-    Optional<GroupDto> findByName(String groupName);
+    @Transactional
+    GroupDto update(UUID groupGuid, GroupUpsertDto groupUpdateDto);
 
-    Slice<GroupDto> findAllByMaxStudentCount(int maxStudentCount, Pageable pageable);
+    @Transactional
+    GroupDto create(GroupUpsertDto groupCreateDto);
 }

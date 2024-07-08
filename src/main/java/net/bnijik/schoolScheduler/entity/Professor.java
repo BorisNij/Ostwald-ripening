@@ -4,8 +4,9 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
 
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,6 +22,8 @@ public class Professor {
     @SequenceGenerator(name = "professor_seq_generator", sequenceName = "professors_professor_id_seq", allocationSize = 1)
     @Column(name = "professor_id", updatable = false, nullable = false)
     private long professorId;
+    @Column(nullable = false, unique = true, updatable = false)
+    private UUID guid;
     @NonNull
     @Column(name = "first_name", nullable = false)
     private String firstName;
@@ -30,7 +33,7 @@ public class Professor {
     @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinTable(name = "professor_course", joinColumns = @JoinColumn(name = "professor_id"), inverseJoinColumns = @JoinColumn(name = "course_id"))
     @Builder.Default
-    private SortedSet<Course> taughtCourses = new TreeSet<>();
+    private Set<Course> taughtCourses = new LinkedHashSet<>();
 
     @Override
     public boolean equals(Object obj) {
@@ -51,5 +54,12 @@ public class Professor {
                 "professorId=" + professorId + ", " +
                 "firstName=" + firstName + ", " +
                 "lastName=" + lastName + ']';
+    }
+
+    @PrePersist
+    public void prePersist() {
+        if (guid == null) {
+            guid = UUID.randomUUID();
+        }
     }
 }

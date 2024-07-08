@@ -1,11 +1,11 @@
-package net.bnijik.schoolScheduler.dto;
+package net.bnijik.schoolScheduler.dto.schedule;
 
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-public record ScheduleDto(long scheduleId, String room, OffsetDateTime startTime, OffsetDateTime endTime,
-                          CourseDto course) {
-    public ScheduleDto{
+public record ScheduleUpsertDto(String room, OffsetDateTime startTime, OffsetDateTime endTime){
+
+    public ScheduleUpsertDto {
         Objects.requireNonNull(room);
         Objects.requireNonNull(startTime);
         Objects.requireNonNull(endTime);
@@ -14,11 +14,9 @@ public record ScheduleDto(long scheduleId, String room, OffsetDateTime startTime
     @Override
     public String toString() {
         return "{\n"
-                + "\t\"scheduleId\": " + scheduleId + ",\n"
                 + "\t\"room\": \"" + room + "\",\n"
-                + "\t\"startTime\": \"" + startTime + "\"\n"
+                + "\t\"startTime\": \"" + startTime + "\",\n"
                 + "\t\"endTime\": \"" + endTime + "\"\n"
-                + "\t\"course\": \"" + course + "\"\n"
                 + "}";
     }
 }

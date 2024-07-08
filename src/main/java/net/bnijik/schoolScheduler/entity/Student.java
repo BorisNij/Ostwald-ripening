@@ -5,8 +5,9 @@ import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.util.Collection;
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,21 +23,28 @@ public class Student {
     @SequenceGenerator(name = "student_seq_generator", sequenceName = "students_student_id_seq", allocationSize = 1)
     @Column(name = "student_id", updatable = false, nullable = false)
     private long studentId;
+
+    @Column(nullable = false, unique = true, updatable = false)
+    private UUID guid;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "group_id")
     private Group group;
+
     @NonNull
     @Column(name = "first_name", nullable = false)
     private String firstName;
+
     @NonNull
     @Column(name = "last_name", nullable = false)
     private String lastName;
+
     @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinTable(name = "student_course",
             joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "course_id"))
     @Builder.Default
-    private SortedSet<Course> courses = new TreeSet<>();
+    private Set<Course> courses = new LinkedHashSet<>();
 
 
     public void addCourse(@NonNull final Course course) {
@@ -87,6 +95,13 @@ public class Student {
                 "studentId=" + studentId + ", " +
                 "firstName=" + firstName + ", " +
                 "lastName=" + lastName + ']';
+    }
+
+    @PrePersist
+    public void prePersist() {
+        if (guid == null) {
+            guid = UUID.randomUUID();
+        }
     }
 
 }

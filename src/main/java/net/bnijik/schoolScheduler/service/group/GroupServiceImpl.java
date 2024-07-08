@@ -1,20 +1,18 @@
 package net.bnijik.schoolScheduler.service.group;
 
-import net.bnijik.schoolScheduler.dto.GroupDto;
+import net.bnijik.schoolScheduler.dto.group.GroupDto;
+import net.bnijik.schoolScheduler.dto.group.GroupUpsertDto;
 import net.bnijik.schoolScheduler.entity.Group;
 import net.bnijik.schoolScheduler.mapper.GroupMapper;
 import net.bnijik.schoolScheduler.repository.GroupRepository;
 import net.bnijik.schoolScheduler.service.schoolAdmin.SchoolAdminServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Slice;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.UUID;
 
 @Service
-public class GroupServiceImpl extends SchoolAdminServiceImpl<GroupDto, Group> implements GroupService {
-
+public class GroupServiceImpl extends SchoolAdminServiceImpl<GroupDto,Group> implements GroupService {
     private final GroupMapper groupMapper;
     private final GroupRepository groupRepository;
 
@@ -26,14 +24,16 @@ public class GroupServiceImpl extends SchoolAdminServiceImpl<GroupDto, Group> im
     }
 
     @Override
-    public Optional<GroupDto> findByName(String groupName) {
-        final Optional<Group> groupOptional = groupRepository.findByGroupName(groupName);
-        return groupOptional.map(groupMapper::modelToDto);
+    public GroupDto update(UUID groupGuid, GroupUpsertDto groupUpdateDto) {
+        final Group groupToUpdate = groupRepository.findByGuid(groupGuid).orElseThrow();
+        groupToUpdate.groupName(groupUpdateDto.groupName());
+        final Group updated = groupRepository.update(groupToUpdate);
+        return groupMapper.modelToDto(updated);
     }
 
     @Override
-    public Slice<GroupDto> findAllByMaxStudentCount(int maxStudentCount, Pageable pageable) {
-        final Slice<Group> groups = groupRepository.findAllByMaxStudentCount(maxStudentCount, pageable);
-        return groupMapper.modelsToDtos(groups);
+    public GroupDto create(GroupUpsertDto groupCreateDto) {
+        final Group group = groupMapper.createDtoToModel(groupCreateDto);
+        return groupMapper.modelToDto(groupRepository.persist(group));
     }
 }

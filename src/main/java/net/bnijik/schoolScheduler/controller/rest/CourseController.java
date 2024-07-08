@@ -1,38 +1,55 @@
 package net.bnijik.schoolScheduler.controller.rest;
 
 import lombok.RequiredArgsConstructor;
-import net.bnijik.schoolScheduler.dto.CourseDto;
+import net.bnijik.schoolScheduler.dto.PagedDto;
+import net.bnijik.schoolScheduler.dto.course.CourseDto;
+import net.bnijik.schoolScheduler.dto.course.CourseUpsertDto;
 import net.bnijik.schoolScheduler.service.course.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Slice;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(path = "/api/courses")
 public class CourseController {
-
     @Autowired
     private final CourseService courseService;
 
+    //TODO: implement default value loading from configurations
     @GetMapping
-    public Slice<CourseDto> getCourses(Pageable pageable) {
-        return courseService.findAll(pageable);
+    public ResponseEntity<PagedDto<CourseDto>> getCourses(@RequestParam(defaultValue = "0", required = false) int pageNum,
+                                                          @RequestParam(defaultValue = "10", required = false) int pageSize,
+                                                          @RequestParam(defaultValue = "courseId", required = false) String sortBy,
+                                                          @RequestParam(defaultValue = "true", required = false) boolean isAsc) {
+        return ResponseEntity.ok(courseService.findAll(pageNum, pageSize, sortBy, isAsc));
+    }
+
+    @GetMapping(path = "/{courseGuid}")
+    public ResponseEntity<CourseDto> getCourse(@PathVariable UUID courseGuid) {
+        return courseService.findByGuid(courseGuid)
+                .map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public CourseDto createCourse(@RequestBody CourseDto courseDto) {
-        return courseService.create(courseDto);
+    public ResponseEntity<CourseDto> createCourse(@RequestBody CourseUpsertDto courseCreateDto) {
+        return new ResponseEntity<>(courseService.create(courseCreateDto), HttpStatus.CREATED);
     }
 
-    @PutMapping("{courseId}")
-    public CourseDto updateCourse(@PathVariable long courseId, @RequestBody CourseDto courseDto) {
-        return courseService.update(courseDto);
+    @PutMapping(path = "/{courseGuid}")
+    public ResponseEntity<CourseDto> updateCourse(@PathVariable UUID courseGuid,
+                                                @RequestBody CourseUpsertDto courseUpdateDto) {
+        return ResponseEntity.ok(courseService.update(courseGuid,
+                                                     courseUpdateDto));
     }
 
-    @DeleteMapping("{courseId}")
-    public void deleteCourse(@PathVariable long courseId) {
-        courseService.delete(courseId);
+    @DeleteMapping("/{courseGuid}")
+    public HttpStatus deleteCourse(@PathVariable UUID courseGuid) {
+        final CourseDto courseDto = courseService.findByGuid(courseGuid).orElseThrow();
+        courseService.delete(courseDto.courseId());
+        return HttpStatus.NO_CONTENT;
     }
 }

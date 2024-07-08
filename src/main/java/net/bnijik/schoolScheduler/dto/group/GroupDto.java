@@ -1,8 +1,9 @@
-package net.bnijik.schoolScheduler.dto;
+package net.bnijik.schoolScheduler.dto.group;
 
 import java.util.Objects;
+import java.util.UUID;
 
-public record GroupDto(long groupId, String groupName) {
+public record GroupDto(long groupId, UUID guid, String groupName) {
     public GroupDto {
         Objects.requireNonNull(groupName);
     }
@@ -11,6 +12,7 @@ public record GroupDto(long groupId, String groupName) {
     public String toString() {
         return "{ "
                 + "\"groupId\": " + groupId + ", "
+                + "\"guid\": " + guid + ", "
                 + "\"groupName\": \"" + groupName + "\""
                 + " }";
     }

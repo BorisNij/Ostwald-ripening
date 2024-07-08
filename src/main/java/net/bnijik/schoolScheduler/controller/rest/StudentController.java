@@ -1,12 +1,17 @@
 package net.bnijik.schoolScheduler.controller.rest;
 
+
 import lombok.RequiredArgsConstructor;
-import net.bnijik.schoolScheduler.dto.StudentDto;
+import net.bnijik.schoolScheduler.dto.PagedDto;
+import net.bnijik.schoolScheduler.dto.student.StudentDto;
+import net.bnijik.schoolScheduler.dto.student.StudentUpsertDto;
 import net.bnijik.schoolScheduler.service.student.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Slice;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
@@ -15,23 +20,37 @@ public class StudentController {
     @Autowired
     private final StudentService studentService;
 
+    //TODO: implement default value loading from configurations
     @GetMapping
-    public Slice<StudentDto> getStudents(Pageable pageable) {
-        return studentService.findAll(pageable);
+    public ResponseEntity<PagedDto<StudentDto>> getStudents(@RequestParam(defaultValue = "0", required = false) int pageNum,
+                                                            @RequestParam(defaultValue = "10", required = false) int pageSize,
+                                                            @RequestParam(defaultValue = "studentId", required = false) String sortBy,
+                                                            @RequestParam(defaultValue = "true", required = false) boolean isAsc) {
+        return ResponseEntity.ok(studentService.findAll(pageNum, pageSize, sortBy, isAsc));
+    }
+
+    @GetMapping(path = "/{studentGuid}")
+    public ResponseEntity<StudentDto> getStudent(@PathVariable UUID studentGuid) {
+        return studentService.findByGuid(studentGuid)
+                .map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public StudentDto createStudent(@RequestBody StudentDto studentDto) {
-        return studentService.create(studentDto);
+    public ResponseEntity<StudentDto> createStudent(@RequestBody StudentUpsertDto studentCreateDto) {
+        return new ResponseEntity<>(studentService.create(studentCreateDto), HttpStatus.CREATED);
     }
 
-    @PutMapping("{studentId}")
-    public StudentDto updateStudent(@PathVariable long studentId, @RequestBody StudentDto studentDto) {
-        return studentService.update(studentDto);
+    @PutMapping(path = "/{studentGuid}")
+    public ResponseEntity<StudentDto> updateStudent(@PathVariable UUID studentGuid,
+                                                    @RequestBody StudentUpsertDto studentUpdateDto) {
+        return ResponseEntity.ok(studentService.update(studentGuid,
+                                                       studentUpdateDto));
     }
 
-    @DeleteMapping("{studentId}")
-    public void deleteStudent(@PathVariable long studentId) {
-        studentService.delete(studentId);
+    @DeleteMapping("/{studentGuid}")
+    public HttpStatus deleteStudent(@PathVariable UUID studentGuid) {
+        final StudentDto studentDto = studentService.findByGuid(studentGuid).orElseThrow();
+        studentService.delete(studentDto.studentId());
+        return HttpStatus.NO_CONTENT;
     }
 }

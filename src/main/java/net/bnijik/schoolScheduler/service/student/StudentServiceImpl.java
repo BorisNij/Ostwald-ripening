@@ -1,7 +1,9 @@
 package net.bnijik.schoolScheduler.service.student;
 
-import net.bnijik.schoolScheduler.dto.GroupDto;
-import net.bnijik.schoolScheduler.dto.StudentDto;
+import net.bnijik.schoolScheduler.dto.PagedDto;
+import net.bnijik.schoolScheduler.dto.group.GroupDto;
+import net.bnijik.schoolScheduler.dto.student.StudentDto;
+import net.bnijik.schoolScheduler.dto.student.StudentUpsertDto;
 import net.bnijik.schoolScheduler.entity.Course;
 import net.bnijik.schoolScheduler.entity.Group;
 import net.bnijik.schoolScheduler.entity.Student;
@@ -12,14 +14,13 @@ import net.bnijik.schoolScheduler.repository.StudentRepository;
 import net.bnijik.schoolScheduler.service.group.GroupService;
 import net.bnijik.schoolScheduler.service.schoolAdmin.SchoolAdminServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Slice;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class StudentServiceImpl extends SchoolAdminServiceImpl<StudentDto, Student> implements StudentService {
@@ -45,9 +46,12 @@ public class StudentServiceImpl extends SchoolAdminServiceImpl<StudentDto, Stude
     }
 
     @Override
-    public Slice<StudentDto> findAllByCourseName(String courseName, Pageable pageable) {
-        final Slice<Student> students = studentRepository.findAllByCoursesCourseName(courseName, pageable);
-        return studentMapper.modelsToDtos(students);
+    public PagedDto<StudentDto> findAllByCourseName(String courseName,int pageNum, int pageSize, String sortBy, boolean isAsc) {
+        final Sort sort = isAsc ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
+        final PageRequest pageRequest = PageRequest.of(pageNum, pageSize, sort);
+        final Page<Student> page = studentRepository.findAll(pageRequest);
+        final Set<StudentDto> studentDtos = studentMapper.modelsToDtos(page.getContent());
+        return new PagedDto<>(studentDtos, !page.isLast());
     }
 
     @Override
@@ -100,5 +104,19 @@ public class StudentServiceImpl extends SchoolAdminServiceImpl<StudentDto, Stude
         return super.create(studentMapper.modelToDto(new Student().firstName(firstName)
                                                              .lastName(lastName)
                                                              .group(group)));
+    }
+
+    @Override
+    public StudentDto update(UUID studentGuid, StudentUpsertDto studentUpdateDto) {
+        final Student studentToUpdate = studentRepository.findByGuid(studentGuid).orElseThrow();
+        studentToUpdate.firstName(studentUpdateDto.firstName()).lastName(studentUpdateDto.lastName());
+        final Student updated = studentRepository.update(studentToUpdate);
+        return studentMapper.modelToDto(updated);
+    }
+
+    @Override
+    public StudentDto create(StudentUpsertDto studentCreateDto) {
+        final Student student = studentMapper.createDtoToModel(studentCreateDto);
+        return super.create(studentMapper.modelToDto(student));
     }
 }
