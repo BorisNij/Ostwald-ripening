@@ -1,8 +1,8 @@
 package net.bnijik.schoolScheduler.mapper;
 
 
-import net.bnijik.schoolScheduler.dto.schedule.ScheduleCreateDto;
 import net.bnijik.schoolScheduler.dto.schedule.ScheduleDto;
+import net.bnijik.schoolScheduler.dto.schedule.ScheduleUpsertDto;
 import net.bnijik.schoolScheduler.entity.Schedule;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -26,6 +26,6 @@ public abstract class ScheduleMapper implements SchoolModelMapper<Schedule, Sche
     @Override
     public abstract Schedule dtoToModel(ScheduleDto dto);
 
-    public abstract Schedule createDtoToModel(ScheduleCreateDto scheduleCreateDto);
+    public abstract Schedule createDtoToModel(ScheduleUpsertDto scheduleCreateDto);
 
 }

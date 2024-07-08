@@ -3,9 +3,9 @@ package net.bnijik.schoolScheduler.dto.schedule;
 import java.time.OffsetDateTime;
 import java.util.Objects;
 
-public record ScheduleCreateDto (String room, OffsetDateTime startTime, OffsetDateTime endTime){
+public record ScheduleUpsertDto(String room, OffsetDateTime startTime, OffsetDateTime endTime){
 
-    public ScheduleCreateDto{
+    public ScheduleUpsertDto {
         Objects.requireNonNull(room);
         Objects.requireNonNull(startTime);
         Objects.requireNonNull(endTime);

@@ -1,8 +1,7 @@
 package net.bnijik.schoolScheduler.service.schedule;
 
-import net.bnijik.schoolScheduler.dto.schedule.ScheduleCreateDto;
 import net.bnijik.schoolScheduler.dto.schedule.ScheduleDto;
-import net.bnijik.schoolScheduler.dto.schedule.ScheduleUpdateDto;
+import net.bnijik.schoolScheduler.dto.schedule.ScheduleUpsertDto;
 import net.bnijik.schoolScheduler.entity.Schedule;
 import net.bnijik.schoolScheduler.mapper.ScheduleMapper;
 import net.bnijik.schoolScheduler.repository.ScheduleRepository;
@@ -26,7 +25,7 @@ public class ScheduleServiceImpl extends SchoolAdminServiceImpl<ScheduleDto, Sch
     }
 
     @Override
-    public ScheduleDto update(UUID scheduleGuid, ScheduleUpdateDto scheduleUpdateDto) {
+    public ScheduleDto update(UUID scheduleGuid, ScheduleUpsertDto scheduleUpdateDto) {
         final Schedule scheduleToUpdate = scheduleRepository.findByGuid(scheduleGuid).orElseThrow();
         scheduleToUpdate.room(scheduleUpdateDto.room())
                 .startTime(scheduleUpdateDto.startTime())
@@ -36,7 +35,7 @@ public class ScheduleServiceImpl extends SchoolAdminServiceImpl<ScheduleDto, Sch
     }
 
     @Override
-    public ScheduleDto create(ScheduleCreateDto scheduleCreateDto) {
+    public ScheduleDto create(ScheduleUpsertDto scheduleCreateDto) {
         final Schedule schedule = scheduleMapper.createDtoToModel(scheduleCreateDto);
         return scheduleMapper.modelToDto(scheduleRepository.persist(schedule));
     }
