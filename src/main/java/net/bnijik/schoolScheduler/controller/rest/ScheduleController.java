@@ -2,9 +2,8 @@ package net.bnijik.schoolScheduler.controller.rest;
 
 import lombok.RequiredArgsConstructor;
 import net.bnijik.schoolScheduler.dto.PagedDto;
-import net.bnijik.schoolScheduler.dto.schedule.ScheduleCreateDto;
 import net.bnijik.schoolScheduler.dto.schedule.ScheduleDto;
-import net.bnijik.schoolScheduler.dto.schedule.ScheduleUpdateDto;
+import net.bnijik.schoolScheduler.dto.schedule.ScheduleUpsertDto;
 import net.bnijik.schoolScheduler.service.schedule.ScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +20,7 @@ public class ScheduleController {
     @Autowired
     private final ScheduleService scheduleService;
 
+    //TODO: implement default value loading from configurations
     @GetMapping
     public ResponseEntity<PagedDto<ScheduleDto>> getSchedules(@RequestParam(defaultValue = "0", required = false) int pageNum,
                                                               @RequestParam(defaultValue = "10", required = false) int pageSize,
@@ -29,18 +29,20 @@ public class ScheduleController {
         return ResponseEntity.ok(scheduleService.findAll(pageNum, pageSize, sortBy, isAsc));
     }
 
-    public ResponseEntity<ScheduleDto> getSchedule(UUID shceduleGuid) {
-        return scheduleService.findByGuid(shceduleGuid)
+    @GetMapping(path = "/{scheduleGuid}")
+    public ResponseEntity<ScheduleDto> getSchedule(UUID scheduleGuid) {
+        return scheduleService.findByGuid(scheduleGuid)
                 .map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    public ResponseEntity<ScheduleDto> createSchedule(ScheduleCreateDto scheduleCreateDto) {
+    @PostMapping
+    public ResponseEntity<ScheduleDto> createSchedule(ScheduleUpsertDto scheduleCreateDto) {
         return new ResponseEntity<>(scheduleService.create(scheduleCreateDto), HttpStatus.CREATED);
     }
 
     @PutMapping(path = "/{scheduleGuid}")
     public ResponseEntity<ScheduleDto> updateSchedule(@PathVariable UUID scheduleGuid,
-                                                        @RequestBody ScheduleUpdateDto scheduleUpdateDto) {
+                                                        @RequestBody ScheduleUpsertDto scheduleUpdateDto) {
         return ResponseEntity.ok(scheduleService.update(scheduleGuid,
                                                          scheduleUpdateDto));
     }
