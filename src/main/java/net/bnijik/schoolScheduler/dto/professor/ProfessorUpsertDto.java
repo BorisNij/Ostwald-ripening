@@ -2,8 +2,8 @@ package net.bnijik.schoolScheduler.dto.professor;
 
 import java.util.Objects;
 
-public record ProfessorCreateDto (String firstName, String lastName) {
-    public ProfessorCreateDto {
+public record ProfessorUpsertDto(String firstName, String lastName) {
+    public ProfessorUpsertDto {
         Objects.requireNonNull(firstName);
         Objects.requireNonNull(lastName);
     }

@@ -1,8 +1,8 @@
 package net.bnijik.schoolScheduler.mapper;
 
 
-import net.bnijik.schoolScheduler.dto.professor.ProfessorCreateDto;
 import net.bnijik.schoolScheduler.dto.professor.ProfessorDto;
+import net.bnijik.schoolScheduler.dto.professor.ProfessorUpsertDto;
 import net.bnijik.schoolScheduler.entity.Professor;
 import net.bnijik.schoolScheduler.service.course.CourseService;
 import org.mapstruct.Mapper;
@@ -36,7 +36,7 @@ public abstract class ProfessorMapper implements SchoolModelMapper<Professor, Pr
     @Override
     public abstract Professor dtoToModel(ProfessorDto dto);
 
-    public abstract Professor createDtoToModel(ProfessorCreateDto professorCreateDto);
+    public abstract Professor createDtoToModel(ProfessorUpsertDto professorCreateDto);
 
 }
 

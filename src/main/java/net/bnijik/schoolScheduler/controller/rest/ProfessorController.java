@@ -1,11 +1,10 @@
 package net.bnijik.schoolScheduler.controller.rest;
 
 import lombok.RequiredArgsConstructor;
-import net.bnijik.schoolScheduler.dto.CourseDto;
 import net.bnijik.schoolScheduler.dto.PagedDto;
-import net.bnijik.schoolScheduler.dto.professor.ProfessorCreateDto;
+import net.bnijik.schoolScheduler.dto.course.CourseAddToUserDto;
 import net.bnijik.schoolScheduler.dto.professor.ProfessorDto;
-import net.bnijik.schoolScheduler.dto.professor.ProfessorUpdateDto;
+import net.bnijik.schoolScheduler.dto.professor.ProfessorUpsertDto;
 import net.bnijik.schoolScheduler.service.professor.ProfessorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +20,7 @@ public class ProfessorController {
     @Autowired
     private final ProfessorService professorService;
 
+    //TODO: implement default value loading from configurations
     @GetMapping
     public ResponseEntity<PagedDto<ProfessorDto>> getProfessors(@RequestParam(defaultValue = "0", required = false) int pageNum,
                                                                 @RequestParam(defaultValue = "10", required = false) int pageSize,
@@ -36,13 +36,13 @@ public class ProfessorController {
     }
 
     @PostMapping
-    public ResponseEntity<ProfessorDto> createProfessor(@RequestBody ProfessorCreateDto professorCreateDto) {
+    public ResponseEntity<ProfessorDto> createProfessor(@RequestBody ProfessorUpsertDto professorCreateDto) {
         return new ResponseEntity<>(professorService.create(professorCreateDto), HttpStatus.CREATED);
     }
 
     @PutMapping(path = "/{professorGuid}")
     public ResponseEntity<ProfessorDto> updateProfessor(@PathVariable UUID professorGuid,
-                                                 @RequestBody ProfessorUpdateDto professorUpdateDto) {
+                                                 @RequestBody ProfessorUpsertDto professorUpdateDto) {
         return ResponseEntity.ok(professorService.update(professorGuid,
                                                             professorUpdateDto));
     }
