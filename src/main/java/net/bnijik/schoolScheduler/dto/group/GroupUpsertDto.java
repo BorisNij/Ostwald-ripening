@@ -2,9 +2,9 @@ package net.bnijik.schoolScheduler.dto.group;
 
 import java.util.Objects;
 
-public record GroupCreateDto(String groupName){
+public record GroupUpsertDto(String groupName){
 
-    public GroupCreateDto{
+    public GroupUpsertDto {
         Objects.requireNonNull(groupName);
     }
 

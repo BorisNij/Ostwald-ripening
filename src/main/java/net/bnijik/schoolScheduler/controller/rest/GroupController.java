@@ -2,9 +2,8 @@ package net.bnijik.schoolScheduler.controller.rest;
 
 import lombok.RequiredArgsConstructor;
 import net.bnijik.schoolScheduler.dto.PagedDto;
-import net.bnijik.schoolScheduler.dto.group.GroupCreateDto;
 import net.bnijik.schoolScheduler.dto.group.GroupDto;
-import net.bnijik.schoolScheduler.dto.group.GroupUpdateDto;
+import net.bnijik.schoolScheduler.dto.group.GroupUpsertDto;
 import net.bnijik.schoolScheduler.service.group.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,6 +19,7 @@ public class GroupController {
     @Autowired
     private final GroupService groupService;
 
+    //TODO: implement default value loading from configurations
     @GetMapping
     public ResponseEntity<PagedDto<GroupDto>> getGroups(@RequestParam(defaultValue = "0", required = false) int pageNum,
                                                         @RequestParam(defaultValue = "10", required = false) int pageSize,
@@ -28,18 +28,20 @@ public class GroupController {
         return ResponseEntity.ok(groupService.findAll(pageNum, pageSize, sortBy, isAsc));
     }
 
-    public ResponseEntity<GroupDto> getGroup(UUID shceduleGuid) {
-        return groupService.findByGuid(shceduleGuid)
+    @GetMapping(path = "/{groupGuid}")
+    public ResponseEntity<GroupDto> getGroup(@PathVariable UUID groupGuid) {
+        return groupService.findByGuid(groupGuid)
                 .map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    public ResponseEntity<GroupDto> createGroup(GroupCreateDto groupCreateDto) {
+    @PostMapping
+    public ResponseEntity<GroupDto> createGroup(@RequestBody GroupUpsertDto groupCreateDto) {
         return new ResponseEntity<>(groupService.create(groupCreateDto), HttpStatus.CREATED);
     }
 
     @PutMapping(path = "/{groupGuid}")
     public ResponseEntity<GroupDto> updateGroup(@PathVariable UUID groupGuid,
-                                                      @RequestBody GroupUpdateDto groupUpdateDto) {
+                                                      @RequestBody GroupUpsertDto groupUpdateDto) {
         return ResponseEntity.ok(groupService.update(groupGuid,
                                                         groupUpdateDto));
     }

@@ -1,8 +1,7 @@
 package net.bnijik.schoolScheduler.service.group;
 
-import net.bnijik.schoolScheduler.dto.group.GroupCreateDto;
 import net.bnijik.schoolScheduler.dto.group.GroupDto;
-import net.bnijik.schoolScheduler.dto.group.GroupUpdateDto;
+import net.bnijik.schoolScheduler.dto.group.GroupUpsertDto;
 import net.bnijik.schoolScheduler.entity.Group;
 import net.bnijik.schoolScheduler.mapper.GroupMapper;
 import net.bnijik.schoolScheduler.repository.GroupRepository;
@@ -25,7 +24,7 @@ public class GroupServiceImpl extends SchoolAdminServiceImpl<GroupDto,Group> imp
     }
 
     @Override
-    public GroupDto update(UUID groupGuid, GroupUpdateDto groupUpdateDto) {
+    public GroupDto update(UUID groupGuid, GroupUpsertDto groupUpdateDto) {
         final Group groupToUpdate = groupRepository.findByGuid(groupGuid).orElseThrow();
         groupToUpdate.groupName(groupUpdateDto.groupName());
         final Group updated = groupRepository.update(groupToUpdate);
@@ -33,7 +32,7 @@ public class GroupServiceImpl extends SchoolAdminServiceImpl<GroupDto,Group> imp
     }
 
     @Override
-    public GroupDto create(GroupCreateDto groupCreateDto) {
+    public GroupDto create(GroupUpsertDto groupCreateDto) {
         final Group group = groupMapper.createDtoToModel(groupCreateDto);
         return groupMapper.modelToDto(groupRepository.persist(group));
     }
