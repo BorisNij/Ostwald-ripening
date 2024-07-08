@@ -1,8 +1,8 @@
 package net.bnijik.schoolScheduler.dto.professor;
 
 import lombok.Builder;
-import net.bnijik.schoolScheduler.dto.CourseDto;
 import net.bnijik.schoolScheduler.dto.PagedDto;
+import net.bnijik.schoolScheduler.dto.course.CourseDto;
 
 import java.util.Objects;
 import java.util.Set;

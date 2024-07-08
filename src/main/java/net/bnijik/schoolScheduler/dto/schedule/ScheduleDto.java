@@ -18,7 +18,7 @@ public record ScheduleDto(long scheduleId, UUID guid, String room, OffsetDateTim
     public String toString() {
         return "{\n"
                 + "\t\"scheduleId\": " + scheduleId + ",\n"
-                + "\t\"scheduleId\": " + guid + ",\n"
+                + "\t\"guid\": " + guid + ",\n"
                 + "\t\"room\": \"" + room + "\",\n"
                 + "\t\"startTime\": \"" + startTime + "\"\n"
                 + "\t\"endTime\": \"" + endTime + "\"\n"
