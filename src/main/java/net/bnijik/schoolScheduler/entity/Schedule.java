@@ -21,7 +21,7 @@ public class Schedule implements Comparable<Schedule>{
     @Column(name = "schedule_id")
     private long scheduleId;
 
-    @Column(nullable = false, unique = true, updatable = false, insertable = false)
+    @Column(nullable = false, unique = true, updatable = false)
     private UUID guid;
 
     @Column(nullable = false)
@@ -72,5 +72,12 @@ public class Schedule implements Comparable<Schedule>{
             return 1;
         }
         return 0;
+    }
+
+    @PrePersist
+    public void prePersist() {
+        if (guid == null) {
+            guid = UUID.randomUUID();
+        }
     }
 }

@@ -24,7 +24,7 @@ public class Student {
     @Column(name = "student_id", updatable = false, nullable = false)
     private long studentId;
 
-    @Column(nullable = false, unique = true, updatable = false, insertable = false)
+    @Column(nullable = false, unique = true, updatable = false)
     private UUID guid;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -95,6 +95,13 @@ public class Student {
                 "studentId=" + studentId + ", " +
                 "firstName=" + firstName + ", " +
                 "lastName=" + lastName + ']';
+    }
+
+    @PrePersist
+    public void prePersist() {
+        if (guid == null) {
+            guid = UUID.randomUUID();
+        }
     }
 
 }

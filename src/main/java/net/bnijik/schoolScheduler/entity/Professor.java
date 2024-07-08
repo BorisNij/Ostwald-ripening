@@ -22,7 +22,7 @@ public class Professor {
     @SequenceGenerator(name = "professor_seq_generator", sequenceName = "professors_professor_id_seq", allocationSize = 1)
     @Column(name = "professor_id", updatable = false, nullable = false)
     private long professorId;
-    @Column(nullable = false, unique = true, updatable = false, insertable = false)
+    @Column(nullable = false, unique = true, updatable = false)
     private UUID guid;
     @NonNull
     @Column(name = "first_name", nullable = false)
@@ -54,5 +54,12 @@ public class Professor {
                 "professorId=" + professorId + ", " +
                 "firstName=" + firstName + ", " +
                 "lastName=" + lastName + ']';
+    }
+
+    @PrePersist
+    public void prePersist() {
+        if (guid == null) {
+            guid = UUID.randomUUID();
+        }
     }
 }

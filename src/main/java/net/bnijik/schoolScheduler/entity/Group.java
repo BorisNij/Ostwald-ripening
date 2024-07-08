@@ -29,7 +29,7 @@ public class Group {
     @Column(name = "group_id", updatable = false, nullable = false)
     private long groupId;
 
-    @Column(nullable = false, unique = true, updatable = false, insertable = false)
+    @Column(nullable = false, unique = true, updatable = false)
     private UUID guid;
 
     @NonNull
@@ -78,4 +78,10 @@ public class Group {
         return "Group[" + "groupId=" + groupId + ", " + "groupName=" + groupName + ']';
     }
 
+    @PrePersist
+    public void prePersist() {
+        if (guid == null) {
+            guid = UUID.randomUUID();
+        }
+    }
 }

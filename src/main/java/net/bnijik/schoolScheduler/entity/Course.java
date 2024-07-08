@@ -83,4 +83,11 @@ public class Course implements Comparable<Course>, Serializable {
     public int compareTo(@NonNull Course o) {
         return Long.compare(this.courseId, o.courseId);
     }
+
+    @PrePersist
+    public void prePersist() {
+        if (guid == null) {
+            guid = UUID.randomUUID();
+        }
+    }
 }
