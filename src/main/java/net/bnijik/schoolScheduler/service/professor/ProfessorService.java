@@ -17,5 +17,5 @@ public interface ProfessorService extends SchoolAdminService<ProfessorDto> {
     ProfessorDto create(ProfessorUpsertDto professorCreateDto);
 
     @Transactional
-    ProfessorDto addTeachingCourse(UUID professorGuid, CourseDto courseDto);
+    ProfessorDto addTeachingCourse(UUID professorGuid, CourseAddToUserDto courseAddDto);
 }

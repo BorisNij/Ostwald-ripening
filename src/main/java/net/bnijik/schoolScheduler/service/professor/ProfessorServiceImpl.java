@@ -1,8 +1,7 @@
 package net.bnijik.schoolScheduler.service.professor;
 
-import net.bnijik.schoolScheduler.dto.CourseDto;
-import net.bnijik.schoolScheduler.dto.professor.ProfessorCreateDto;
 import net.bnijik.schoolScheduler.dto.course.CourseAddToUserDto;
+import net.bnijik.schoolScheduler.dto.course.CourseDto;
 import net.bnijik.schoolScheduler.dto.professor.ProfessorDto;
 import net.bnijik.schoolScheduler.dto.professor.ProfessorUpsertDto;
 import net.bnijik.schoolScheduler.entity.Course;
@@ -51,11 +50,13 @@ public class ProfessorServiceImpl extends SchoolAdminServiceImpl<ProfessorDto, P
     }
 
     @Override
-    public ProfessorDto addTeachingCourse(UUID professorGuid, CourseDto courseDto) {
-        final Professor professor = professorRepository.findByGuid(professorGuid).orElseThrow();
-        professor.taughtCourses().add(courseMapper.dtoToModel(courseDto));
-        final Professor updatedProfessor = professorRepository.merge(professor);
-        return professorMapper.modelToDto(updatedProfessor);
+    public ProfessorDto addTeachingCourse(UUID professorGuid, CourseAddToUserDto courseAddDto) {
+        final CourseDto additionalCourseDto = courseService.findByGuid(courseAddDto.guid()).orElseThrow();
+        final Course additionalCourse = courseMapper.dtoToModel(additionalCourseDto);
+        final ProfessorDto professorDto = super.findByGuid(professorGuid).orElseThrow();
+        final Professor professor = professorMapper.dtoToModel(professorDto);
+        professor.taughtCourses().add(additionalCourse);
+        return super.merge(professorMapper.modelToDto(professor));
     }
 
 }

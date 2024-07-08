@@ -55,8 +55,8 @@ public class ProfessorController {
     }
 
     @PostMapping(path = "/{professorGuid}")
-    public ResponseEntity<ProfessorDto> addTeachingCourse(@PathVariable UUID professorGuid, @RequestBody CourseDto courseDto) {
-        final ProfessorDto professorDto = professorService.addTeachingCourse(professorGuid, courseDto);
+    public ResponseEntity<ProfessorDto> addTeachingCourse(@PathVariable UUID professorGuid, @RequestBody CourseAddToUserDto courseAddDto) {
+        final ProfessorDto professorDto = professorService.addTeachingCourse(professorGuid, courseAddDto);
         return new ResponseEntity<>(professorDto, HttpStatus.CREATED);
     }
 

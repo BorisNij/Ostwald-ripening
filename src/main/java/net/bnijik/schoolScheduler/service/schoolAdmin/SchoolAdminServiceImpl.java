@@ -58,6 +58,12 @@ public class SchoolAdminServiceImpl<D, M> implements SchoolAdminService<D> {
     }
 
     @Override
+    public D merge(D d) {
+        final M model = schoolModelMapper.dtoToModel(d);
+        return schoolModelMapper.modelToDto(schoolRepository.merge(model));
+    }
+
+    @Override
     public void delete(long id) {
         schoolRepository.deleteById(id);
     }

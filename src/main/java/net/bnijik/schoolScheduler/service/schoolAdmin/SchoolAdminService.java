@@ -19,6 +19,9 @@ public interface SchoolAdminService<T> {
     T update(T t);
 
     @Transactional
+    T merge(T t);
+
+    @Transactional
     void delete(long id);
 
     Optional<T> findByGuid(UUID guid);
