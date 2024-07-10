@@ -3,7 +3,9 @@ DROP TABLE IF EXISTS groups, courses, students, student_course CASCADE;
 CREATE TABLE groups (
     group_id int GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     group_name varchar(255) NOT NULL,
-    CONSTRAINT unique_group_name UNIQUE (group_name)
+    guid UUID NOT NULL,
+    CONSTRAINT unique_group_name UNIQUE (group_name),
+    CONSTRAINT unique_groups_guid UNIQUE (guid)
 );
 
 CREATE TABLE students (
@@ -11,14 +13,18 @@ CREATE TABLE students (
     group_id int,
     first_name varchar(255) NOT NULL,
     last_name varchar(255) NOT NULL,
-    FOREIGN KEY (group_id) REFERENCES groups (group_id) ON DELETE SET NULL
+    guid UUID NOT NULL,
+    FOREIGN KEY (group_id) REFERENCES groups (group_id) ON DELETE SET NULL,
+    CONSTRAINT unique_student_guid UNIQUE (guid)
 );
 
 CREATE TABLE courses (
     course_id serial PRIMARY KEY,
     course_name varchar(255) NOT NULL,
     course_description text,
-    CONSTRAINT unique_course_name UNIQUE (course_name)
+    guid UUID NOT NULL,
+    CONSTRAINT unique_course_name UNIQUE (course_name),
+    CONSTRAINT unique_course_guid UNIQUE (guid)
 );
 
 CREATE TABLE student_course (
@@ -39,7 +45,9 @@ CREATE TABLE schedules (
     room varchar(255) NOT NULL,
     start_time timestamp with time zone NOT NULL,
     end_time timestamp with time zone NOT NULL,
-    EXCLUDE USING GIST (room WITH =, tstzrange(start_time, end_time) WITH &&)
+    guid UUID NOT NULL,
+    EXCLUDE USING GIST (room WITH =, tstzrange(start_time, end_time) WITH &&),
+    CONSTRAINT unique_shcedule_guid UNIQUE (guid)
 );
 
 ALTER TABLE courses
@@ -48,8 +56,10 @@ ALTER TABLE courses
 
 CREATE TABLE professors (
     professor_id serial PRIMARY KEY,
+    guid UUID NOT NULL,
     first_name varchar(255) NOT NULL,
-    last_name varchar(255) NOT NULL
+    last_name varchar(255) NOT NULL,
+    CONSTRAINT unique_professor_guid UNIQUE (guid)
 );
 
 CREATE TABLE professor_course (
