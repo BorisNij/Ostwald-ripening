@@ -1,5 +1,6 @@
 package net.bnijik.schoolScheduler.controller.rest;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import net.bnijik.schoolScheduler.dto.PagedDto;
 import net.bnijik.schoolScheduler.dto.course.CourseDto;
@@ -15,6 +16,7 @@ import java.util.UUID;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(path = "/api/courses")
+@SecurityRequirement(name = "scheduler-users")
 public class CourseController {
     @Autowired
     private final CourseService courseService;

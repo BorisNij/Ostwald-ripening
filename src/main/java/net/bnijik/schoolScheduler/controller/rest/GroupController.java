@@ -1,5 +1,6 @@
 package net.bnijik.schoolScheduler.controller.rest;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import net.bnijik.schoolScheduler.dto.PagedDto;
 import net.bnijik.schoolScheduler.dto.group.GroupDto;
@@ -15,6 +16,7 @@ import java.util.UUID;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(path = "/api/groups")
+@SecurityRequirement(name = "scheduler-users")
 public class GroupController {
     @Autowired
     private final GroupService groupService;
