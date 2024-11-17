@@ -4,30 +4,44 @@ services:
         container_name: ${PG_CONTAINER}
         environment:
             POSTGRES_DB: ${POSTGRES_DB}
+            PGPORT: ${POSTGRES_PORT:-5432}
             POSTGRES_USER: ${POSTGRES_USER}
             POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
             POSTGRES_INITDB_ARGS: ${POSTGRES_INITDB_ARGS}
             TZ: ${TIME_ZONE}
+            PGTZ: ${TIME_ZONE}
         ports:
-            - "5432:5432"
+            - "${POSTGRES_PORT:-5432}:${POSTGRES_PORT:-5432}"
         volumes:
             - postgres:/var/lib/postgresql/data
+        networks:
+            - school-scheduler
+
 
     app:
         container_name: ${APP_CONTAINER}
-        build: .
+        build:
+            context: .
         ports:
-            - "8080:8080"
+            - "${APP_PORT:-8080}:8080"
         depends_on:
             - app-db
         environment:
-            spring.datasource.main.jdbc-url: jdbc:postgresql://app-db:5432/${POSTGRES_DB}
+            APP_PROFILE: "${APP_PROFILE:-dev}"
+            spring.datasource.main.jdbc-url: jdbc:postgresql://app-db:${POSTGRES_PORT:-5432}/${POSTGRES_DB}
             spring.datasource.main.username: ${POSTGRES_USER}
             spring.datasource.main.password: ${POSTGRES_PASSWORD}
             TZ: ${TIME_ZONE}
         volumes:
             - app-data:/app-service
+            - .:/opt/app/logs
+        networks:
+            - school-scheduler
 
 volumes:
     postgres:
     app-data:
+
+networks:
+    school-scheduler:
+        driver: bridge

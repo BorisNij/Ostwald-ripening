@@ -1,0 +1,4 @@
+Java version: ${java.version}
+Spring Boot version: ${spring-boot.version}
+Active profile: ${spring.profiles.active}
+Application name: ${spring.application.name}
