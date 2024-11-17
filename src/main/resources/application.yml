@@ -1,21 +1,34 @@
-school:
-    max-courses-per-student: ${MAX_COURSES_PER_STUDENT:3}
 spring:
+    application:
+        name:
+            School Schedule Manager
     config:
-        import: optional:file:./.env[.properties]
+        import:
+            "optional:file:./.env[.properties]"
+    profiles:
+        active:
+            ${APP_PROFILE:dev}
+    banner:
+        location:
+            classpath:banner.txt
     datasource:
         main:
             driver-class-name: org.postgresql.Driver
-            jdbc-url: jdbc:postgresql://localhost:5432/${POSTGRES_DB}
+            jdbc-url: jdbc:postgresql://localhost:${POSTGRES_PORT:5432}/${POSTGRES_DB}
             username: ${POSTGRES_USER}
             password: ${POSTGRES_PASSWORD}
             hikari:
                 minimum-idle: 1
                 maximum-pool-size: 5
-    jpa:
-        properties:
-            hibernate:
-                generate_statistics: true
-                jdbc:
-                    batch_size: 20
-        open-in-view: false
+school:
+    max-courses-per-student: ${MAX_COURSES_PER_STUDENT:3}
+
+logging:
+    threshold:
+        console:
+            WARN
+        file:
+            TRACE
+    file:
+        name:
+          school-scheduler_${APP_PROFILE:dev}.log
