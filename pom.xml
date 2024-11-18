@@ -15,7 +15,6 @@
     <description>School Schedule Manager</description>
     <properties>
         <java.version>17</java.version>
-        <logback.version>1.4.12</logback.version>
         <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
         <dsproxy.version>1.9.1</dsproxy.version>
         <commons-compress.version>1.26.1</commons-compress.version>
@@ -93,11 +92,6 @@
             <groupId>org.testcontainers</groupId>
             <artifactId>postgresql</artifactId>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>${logback.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.gavlyukovskiy</groupId>
