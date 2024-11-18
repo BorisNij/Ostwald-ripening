@@ -1,16 +1,15 @@
-logging:
-    level:
-        net.ttddyy.dsproxy.listener: debug
-
 spring:
+    profiles:
+        active:
+            tests
+    config:
+        include:
+            file:src/main/resources/application.yml
     datasource:
         driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
         url: jdbc:tc:postgresql:16.0-alpine3.18:///test?currentSchema=test_school_db&TC_REUSABLE=true&TC_TMPFS=/testtmpfs:rw
         username: test
         password: test
-        hikari:
-            minimum-idle: 1
-            maximum-pool-size: 5
     jpa:
         database-platform: org.hibernate.dialect.PostgreSQLDialect
         properties:
@@ -19,4 +18,23 @@ spring:
                 generate_statistics: true
                 jdbc:
                     batch_size: 20
-        open-in-view: false
+
+decorator:
+    datasource:
+        datasource-proxy:
+            format-sql: true
+
+logging:
+    level:
+        root:
+            WARN
+        net.ttddyy.dsproxy.listener: DEBUG
+        org.hibernate.engine.internal.StatisticalLoggingSessionEventListener: INFO
+    threshold:
+        console:
+            WARN
+        file:
+            TRACE
+    file:
+        name:
+            school-scheduler_${spring.profiles.active}.log
