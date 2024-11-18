@@ -1,4 +1,7 @@
 spring:
+    application:
+        name:
+            School Schedule Manager
     profiles:
         active:
             tests
